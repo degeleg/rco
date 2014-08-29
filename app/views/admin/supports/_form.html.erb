@@ -1,0 +1,8 @@
+<%= simple_form_for ([:admin, @support]), remote: true, html: { id: 'support-form' } do |f| %>
+	
+	<%= f.input :ticket %>
+
+	<%= f.button :submit, class: 'btn btn-primary' %>
+	<button class="btn btn-danger cancel-form">Cancel</button>
+
+<% end %>

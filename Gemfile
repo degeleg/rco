@@ -41,6 +41,7 @@ gem 'tinymce-rails'
 gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 gem 'gmaps4rails'
 gem 'underscore-rails'
+gem 'figaro'
 
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

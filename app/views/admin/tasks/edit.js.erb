@@ -1,0 +1,10 @@
+$('.edit-task-field').html('<%= j render("form") %>')
+
+$('#show-note').hide();
+$('.task_note').show();
+
+$('.cancel-form').on('click', function(e) {
+	e.preventDefault();
+	$('#task-form').remove();
+	$('#new-task-link').show();
+});

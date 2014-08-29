@@ -12,14 +12,14 @@
 	<tbody>
 		<% Employee.all.order('assignment').reverse.each do |employee| %>
 			<tr>
-				<td><%= link_to "#{employee.first_name } #{employee.last_name}", edit_cms_employee_path(employee), remote: true  %><small class="text-muted">(edit)</small></td>
+				<td><%= link_to "#{employee.first_name } #{employee.last_name}", edit_admin_employee_path(employee), remote: true  %><small class="text-muted">(edit)</small></td>
 				<td><%= mail_to employee.email %></td>
 				<td><%= employee.assignment %></td>
 				<td><button class="btn btn-danger btn-block btn-delete">Delete</button>
 				<div class="delete-confirm">
 					<div class="well text-center">
 						<h3 class="danger-text">Please confirm! This action cannot be undone.</h3>
-						<%= link_to 'Yes, Remove Employee', cms_employee_path(employee), method: :delete, remote: true, class: 'btn btn-danger delete-confirm-button' %>
+						<%= link_to 'Yes, Remove Employee', admin_employee_path(employee), method: :delete, remote: true, class: 'btn btn-danger delete-confirm-button' %>
 					</div>
 				</div></td>
 			</tr>

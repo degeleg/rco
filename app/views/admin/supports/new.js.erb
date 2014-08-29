@@ -1,0 +1,7 @@
+$('#new-support-link').hide().parent().after('<%= j render("form") %>')
+
+$('.cancel-form').on('click', function(e) {
+	e.preventDefault();
+	$('#support-form').remove();
+	$('#new-support-link').show();
+});

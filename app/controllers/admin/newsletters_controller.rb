@@ -1,4 +1,4 @@
-class Admin::NewslettersController < ApplicationController
+class Admin::NewslettersController < Admin::BackendController
 	def index
 		@pages = Page.publish.all
 		@subscribers = Newsletter.all

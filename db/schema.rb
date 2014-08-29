@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140829160721) do
+ActiveRecord::Schema.define(version: 20140829171538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,6 +105,21 @@ ActiveRecord::Schema.define(version: 20140829160721) do
     t.string   "image_name"
     t.string   "background_uid"
     t.string   "background_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "supports", force: true do |t|
+    t.string   "ticket"
+    t.integer  "admin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tasks", force: true do |t|
+    t.string   "name"
+    t.string   "note"
+    t.integer  "admin_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -5,8 +5,8 @@ class Admin::PagesController < Admin::BackendController
 	def index
 		@pages = Page.all
 		@admins = Admin.all
-		#@tasks = Task.all
-		#@subscribers = Newsletter.all
+		@tasks = Task.all
+		@subscribers = Newsletter.all
 	end
 
 	def new

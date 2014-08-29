@@ -13,7 +13,7 @@
 	<div class="col-md-3 col-sm-6">
 		<div class="dash-summary bg-tarawera">
 			<div class="content">
-				<h1 class="text-left">pl</h1>
+				<h1 class="text-left"><%= @subscribers.size %></h1>
 				<p>Subscribers</p>
 			</div>
 		</div>
@@ -31,13 +31,15 @@
 	<div class="col-md-3 col-sm-6">
 		<div class="dash-summary bg-carmine">
 			<div class="content">
-				<h1 class="text-left">pl</h1>
+				<h1 class="text-left"><%= @tasks.size %></h1>
 				<p>To Do Tasks</p>
 			</div>
 		</div>
 	</div>
 
-</div>
+</div>	
+
+
 
 <div class="row">
 	<div class="col-md-6 col-sm-12 pages">
@@ -54,7 +56,50 @@
 </div>
 
 <div class="row">
-	
+	<div class="col-md-6 col-sm-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4>
+					To Do 
+					<%= link_to 'Add Task', new_admin_task_path, class: 'add-new-link btn btn-primary', remote: true, id:'new-task-link' %>
+						
+				</h4>
+				<div class="panel-action">
+					<i class="fa fa-angle-up close-body"></i>
+				</div>
+			</div>
+			<div class="panel-body">
+
+				<div class="edit-task-field">
+				
+				</div>
+				<div class="tasks">
+					<%= render :template => 'admin/tasks/index' %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 col-sm-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4>
+					Support Tickets 
+					<%= link_to 'Add Ticket', new_admin_support_path, class: 'add-new-link btn btn-primary', remote: true, id:'new-support-link' %>
+						
+				</h4>
+				<div class="panel-action">
+					<i class="fa fa-angle-up close-body"></i>
+				</div>
+			</div>
+			<div class="panel-body">
+				
+				</div>
+				<div class="supports">
+					<%= render :template => 'admin/supports/index' %>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </div>
 

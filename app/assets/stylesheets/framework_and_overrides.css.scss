@@ -3,6 +3,34 @@
 @import "bootstrap";
 @import "font-awesome";
 
+body { background-color:transparent; }
+
+body.mce-content-body { 
+  background-color:#fff;
+  font-size:16px; color:#333; 
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif; 
+  font-weight:300;
+  letter-spacing:1px;
+  line-height:1.5;
+  padding:10px;
+}
+
+textarea:hover, 
+input:hover, 
+textarea:active, 
+input:active, 
+textarea:focus, 
+input:focus,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    outline:0px !important;
+    -webkit-appearance:none;
+        }
+
+fieldset { margin-top:25px; }
+
 // make all images responsive by default
 img {
   @extend .img-responsive;
@@ -45,3 +73,12 @@ section {
   @extend .row;
   margin-top: 20px;
   }
+
+
+.panel-default > .panel-heading { background-color:#fafafa; }
+
+a { outline:none; }
+a { outline:0; }
+a:link { outline-style:none; }
+a:active { outline:none }
+a:focus { -moz-outline-style:none; }

@@ -13,7 +13,13 @@ h3.text-danger { font-weight:bolder; }
 // global settings
 
 
-html, body { position:relative; }
+html, body { 
+	position:relative; 
+	background-color: #F1F2F7; 
+  	color:#777; 
+  	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif; 
+  	line-height:1.5;
+}
 .row + .row { margin-top:25px; }
 ul { list-style:none; padding-left:0; }
 

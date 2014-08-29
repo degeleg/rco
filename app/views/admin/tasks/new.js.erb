@@ -1,0 +1,12 @@
+$('#new-task-link').hide().parent().after('<%= j render("form") %>')
+
+$('#task-form').on('click', '#show-note', function(e) {
+	e.preventDefault();
+	$('.task_note').show();
+});
+
+$('.cancel-form').on('click', function(e) {
+	e.preventDefault();
+	$('#task-form').remove();
+	$('#new-task-link').show();
+});

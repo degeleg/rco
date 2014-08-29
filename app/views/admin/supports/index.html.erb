@@ -1,0 +1,17 @@
+
+<ul class="supports">
+
+	<% Support.all.each do |support| %>
+
+		<li>
+			<p><%= support.ticket %> 
+				<span class="label label-warning">Submited by: <%= support.admin.fullname %></span>
+				<% if current_admin.has_role? :developer %>
+					<%= link_to "Delete", admin_support_path(support), method: :delete %>
+				<% end %>
+			</p>
+		</li>
+
+	<% end %>
+
+</ul>

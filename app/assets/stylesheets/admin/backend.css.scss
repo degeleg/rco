@@ -1,3 +1,5 @@
+
+
 // colors
 .bg-sea { background-color:#1ABC9C; }
 .bg-carmine { background-color:#E84C3D; }  
@@ -15,11 +17,24 @@ h3.text-danger { font-weight:bolder; }
 
 html, body { 
 	position:relative; 
-	background-color: #F1F2F7; 
+	
   	color:#777; 
   	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif; 
   	line-height:1.5;
 }
+
+.cms { background-color: #F1F2F7;  } 
+
+body.mce-content-body { 
+  background-color:#fff;
+  font-size:16px; color:#333; 
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif; 
+  font-weight:300;
+  letter-spacing:1px;
+  line-height:1.5;
+  padding:10px;
+}
+
 .row + .row { margin-top:25px; }
 ul { list-style:none; padding-left:0; }
 

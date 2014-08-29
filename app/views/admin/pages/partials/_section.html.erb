@@ -1,0 +1,45 @@
+<%= f.simple_fields_for :sections do |build| %>
+				
+			
+
+<div class="remove-container">
+	<%= link_to 'Remove', '#', class: 'remove_fields'   %>
+
+	<div class="content">
+		<div class="panel panel-default">
+			<div class="panel-heading parent">
+				<%= f.input :section_title, wrapper_html: { class: 'section_title' }, placeholder: 'Section Title' %>
+				<span class="btn btn-primary btn-file">
+					Select Background... <%= f.input_field :background, as: :file %>
+				</span>
+				<% if f.object.background_stored? %>
+					<span class="show-file label label-info">Current Background: <%= f.object.background.name %></span>
+				<% else %>
+					<span class="show-file label label-info"></span>
+				<% end %>
+				<div class="panel-action">
+					<i class="fa fa-angle-down close-body"></i>
+				</div>
+			</div>
+
+			<div class="panel-body">
+				<button class="btn btn-info add-content">
+					<% if f.object.content.present? %>
+						Edit Content
+					<% else %>
+						Add Content
+					<% end %>
+				</button>
+				<div class="editor">
+
+					<%= f.input :content, as: :text, input_html: { rows: '10' }, label: false %>
+					
+					<%= f.check_box :_destroy, class: 'check' %>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<% end %>

@@ -1,0 +1,12 @@
+<% heading "Admin: #{@admin.first_name} #{@admin.last_name}" %>
+<% unless @admin.has_role? :developer %>
+	<button class="btn btn-danger btn-delete">Delete</button>
+		<div class="delete-confirm">
+			<div class="well text-center">
+				<h3 class="text-danger">Please confirm! This action cannot be undone.</h3>
+				<%= link_to 'Yes, Delete Admin', cms_admin_path(@admin), method: :delete, class: 'btn btn-danger delete-confirm-button' %>
+			</div>
+		</div>
+
+<%= render 'form' %>
+<% end %>

@@ -30,6 +30,19 @@ group :development do
   gem 'rails_layout', github: 'RailsApps/rails_layout'
 end
 
+gem 'simple_form'
+gem 'mail_form'
+gem 'dragonfly', "~>1.0.5"
+gem 'devise'
+gem 'rolify'
+gem 'cancancan', '~> 1.9'
+gem 'jquery-turbolinks'
+gem 'tinymce-rails'
+gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
+gem 'gmaps4rails'
+gem 'underscore-rails'
+
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 

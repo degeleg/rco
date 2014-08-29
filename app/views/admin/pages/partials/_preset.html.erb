@@ -1,0 +1,71 @@
+<div class="row preset-layout">
+
+	<fieldset class="col-md-12 header-uploaders">
+		<legend>Page Header</legend>
+		
+		<div class="row">
+			<div class="col-md-4 parent">
+				<div class="content">
+					<h1 class="step">1</h1>
+					<h4 class="text-center">Select Header Background</h4>
+					<span class="btn btn-primary btn-block btn-file">
+						Browse... <%= f.input_field :background, as: :file %>
+					</span>
+					<% if @page.background_stored? %>
+						<span class="show-file label label-info"><%= @page.background.name %></span>
+					<% else %>
+						<span class="show-file label label-info"></span>
+					<% end %>
+				</div>
+			</div>
+
+			<div class="col-md-4 parent">
+				<div class="content">
+					<h1 class="step">2</h1>
+					<h4 class="text-center">Include Header Icon</h4>
+					<span class="btn btn-primary btn-block btn-file">
+						Browse... <%= f.input_field :icon, as: :file %>
+					</span>
+					<% if @page.icon_stored? %>
+						<span class="show-file label label-info"><%= @page.icon.name %></span>
+					<% else %>
+						<span class="show-file label label-info"></span>
+					<% end %>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="content">
+					<h1 class="step">3</h1>
+					<h4 class="text-center">Insert A headline</h4>
+					<button class="btn btn-primary btn-block add-content" id="show-headliners">
+						<% if @page.header_content.present? %>
+							Edit Content
+						<% else %>
+							Add Content
+						<% end %>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="headliners clearfix">
+			<%= f.input :header_content, as: :text, input_html: { class: 'tinymce' } %>
+
+		</div>
+
+	</fieldset>
+
+	<fieldset class="col-md-12">
+		<legend>Main Content</legend>
+		
+		<% unless params[:action] == 'edit' %>
+			<%= link_to_new 'Add Section', f, :sections %>
+		<% else %>
+			<%= link_to_new 'Add Section', f, :sections %>
+			<%= f.simple_fields_for :sections do |build| %>
+				<%= render 'admin/pages/partials/section', f: build %>
+			<% end %>
+		<% end %>		
+	</fieldset>
+
+</div>

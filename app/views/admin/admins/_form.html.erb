@@ -1,0 +1,37 @@
+<%= simple_form_for ([:admin, @admin]) do |f| %>
+	
+	<% if f.error_notification %>
+	    <div class="alert alert-danger" role="alert">
+	      <a class="close" data-dismiss="alert" href="#">&times;</a>
+	      <%= f.error_notification %>
+	    </div>
+	<% end %>
+
+	<fieldset class="first">
+		<legend>Personal Information</legend>
+		<%= f.input :first_name, wrapper_html: { class: 'col-md-6' } %>
+		<%= f.input :last_name, wrapper_html: { class: 'col-md-6' } %>
+			<% if can? :manage, Admin %>
+				<%= f.input :email, wrapper_html: { class: 'col-md-12' } %>
+			<% else %>
+				<%= f.input :email, wrapper_html: { class: 'col-md-12' }, :disabled => true %>
+			<% end %>
+	</fieldset>
+
+	<fieldset>
+		<legend>Security</legend>
+		<%= f.input :password, wrapper_html: { class: 'col-md-6' } %>
+		<%= f.input :password_confirmation, wrapper_html: { class: 'col-md-6' } %>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Assignment</legend>
+		<%= f.association :roles, as: :collection_select if can? :manage_roles, @admin %>
+	</fieldset>
+
+	
+	<%= f.button :submit, class: 'btn-primary' %>
+
+
+
+<% end %>

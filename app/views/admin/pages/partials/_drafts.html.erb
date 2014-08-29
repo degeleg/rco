@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4>
+			Draft Pages 
+		</h4>
+		<div class="panel-action">
+			<i class="fa fa-angle-up close-body"></i>
+		</div>
+	</div>
+	<div class="panel-body">
+		<% if @pages.draft.blank? %>
+			<h3 class="text-center text-muted">No Drafts Posted</h3>
+		<% end %>
+		<% @pages.draft.each do |page| %>
+			<div class="page clearfix">
+				<h4><%= link_to page.permalink.titleize, edit_admin_page_path(page) %> <small class="text-muted">(edit)</small> </h4>
+				<div class="page-actions">
+					<button class="btn btn-danger btn-delete">Delete</button>
+					<div class="delete-confirm">
+						<div class="well text-center">
+							<h3 class="danger-text">Please confirm! This action cannot be undone.</h3>
+							<%= link_to 'Yes, Delete Page', admin_page_path(page), method: :delete, class: 'btn btn-danger delete-confirm-button' %>
+						</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>

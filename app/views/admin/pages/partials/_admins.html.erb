@@ -1,0 +1,43 @@
+<div class="col-md-12 col-sm-12">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4>
+				Admins
+				<%= link_to 'New Admin', new_admin_admin_path,  class: 'add-new-link btn btn-primary'%>
+			</h4>
+			<div class="panel-action">
+				<i class="fa fa-angle-up close-body"></i>
+			</div>
+		</div>
+		<div class="panel-body">
+			<div class="table-responsive">
+			<table class="table administrators">
+				<thead>
+					<tr>
+						<td>#</td>
+						<td>Full Name</td>
+						<td>Email</td>
+						<td>Role</td>
+					</tr>
+				</thead>
+				<tbody>
+					<% @admins.order('created_at ASC').each do |admin| %>
+						<tr>
+							<td><%= admin.id %></td>
+							<td><%= image_tag avatar_url(admin, 40), height: '40', width: '40' %>
+								<% if admin.has_role? :developer %>
+									<span><%= admin.fullname %></span>
+								<% else %>
+									<%= link_to admin.fullname, edit_admin_admin_path(admin)  %>
+								<% end %>
+							</td>
+							<td><%= admin.email %></td>
+							<td><span class="label label-info"><%= admin.admin_role %></span></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			</div>
+		</div>
+	</div>	
+</div>

@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  
+
+  devise_for :admins, path: 'admin', path_names: {sign_in: "login", sign_out: "logout"}, controllers: { sessions: 'admin/sessions' }
+  
+
   namespace :admin do
+    resources :pages, :admins
     root to: 'pages#index'
   end
 

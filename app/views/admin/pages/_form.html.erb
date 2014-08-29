@@ -1,0 +1,55 @@
+
+<%= simple_form_for ([:admin, @page]), html: { multipart: true } do |f| %>
+	
+	<% if f.error_notification %>
+	    <div class="alert alert-danger" role="alert">
+	      <a class="close" data-dismiss="alert" href="#">&times;</a>
+	      <%= f.error_notification %>
+	    </div>
+	<% end %>
+
+	<%= link_to '#', id: 'meta-link' do  %>
+		<i class="fa fa-cog"></i>
+	<% end %>
+
+	<!-- page form permalink -->
+	<%= f.input :permalink, label: "Enter Page Title", wrapper_html: { class: 'page-title' }  %>
+	<p class="text-center text-muted">
+
+
+	</p>
+	<h4 class="text-center show-title-verify text-muted">You have to enter a title to continue..</h4>
+	
+	<div class="row meta-wrap">
+		<fieldset class="col-md-12">
+			<legend>Meta Information</legend>
+			<%= f.simple_fields_for :meta do |build| %>
+				<%= build.input :descriptive_title, wrapper_html: { class: 'col-md-6' } %>
+				<%= build.input :author, wrapper_html: { class: 'col-md-6' } %>
+				<%= build.input :keywords, wrapper_html: { class: 'col-md-6' } %>
+				<%= build.input :description, as: :text, wrapper_html: { class: 'col-md-6' } %>
+			<% end %>
+		</fieldset>
+		
+	</div>
+
+	<div class="preset">
+
+		<%= render 'admin/pages/partials/preset', f: f %>
+
+		<div class="row">
+			<div class="col-md-12 create-actions">
+				<%= f.submit 'Save as Draft', name: "draft", class: "btn btn-info" %>
+				<%= f.button :submit, name: "publish", class: "btn btn-primary" %>
+			</div>
+		</div>
+
+	</div>
+
+
+
+	
+	
+
+<% end %>
+

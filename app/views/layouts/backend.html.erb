@@ -1,20 +1,66 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Mad" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Mad" %>">
-    <%= stylesheet_link_tag 'backend', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <header>
+<html class="cms">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= content_for?(:title) ? yield(:title) : "Ritter & Company" %></title>
+        <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Ritter & Company" %>">
+        <%= stylesheet_link_tag 'backend', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+        <%= tinymce %>
+    </head>
+    <body id="top">
+        
+        <!-- header -->
+        <header class="clearfix">
+            
+            <div class="brand">
+                <%= link_to '#nav', id: 'toggle-nav' do  %>
+                    <i class="fa fa-bars"></i>
+                <% end %>
+                <h3>Ritter &amp; Company</h3>
+            </div>
+            
+            <% if admin_signed_in? %>
+            <!-- if admin is signed in -->
+                <%= link_to 'Logout', destroy_admin_session_path, class: 'btn pull-right', id: 'logout', method: :delete  %>
+            <% end %>
+            <!-- visit public site -->
+            <%= link_to 'Website', root_path, class: 'btn pull-right', id: 'website' %>  
+           
+        </header>
+        <!-- end -->
 
-    </header>
+        <!-- aside && navigation -->
+        <aside class="wrapper">
+            <div class="current-admin">
+                <%= image_tag avatar_url(current_admin, 80), width: '80', height: '80' %>
+                <h4><%= current_admin.fullname %></h4> 
+                <span><em>( <%= current_admin.admin_role %>)</em></span>
+            </div>
 
-       <%= render 'layouts/messages' %>
-       <%= yield %>
+             <nav>
+                <%= render 'layouts/backend/navigation_links' %>
+            </nav>
+        </aside>
+        <!-- end -->
+        
+        <!-- main content -->
+        <div class="main-wrapper">
+            <%= render 'layouts/messages' %>
+            <div class="main-content">
+                <h2><%= yield :heading || " " %></h2>
+                <h4 class="date"><%= l Time.zone.now, format: :short %></h4>
+                <%= yield %>
+            </div>
+        </div>
+        <!-- end -->
 
-  </body>
+        <!-- scroll top -->
+        <%= link_to '#top', id: 'scroll' do  %>
+            <i class="fa fa-arrow-up"></i>
+        <% end %>
+        <!-- end -->
+        <div class="nav-bg"></div>
+    </body>
 </html>

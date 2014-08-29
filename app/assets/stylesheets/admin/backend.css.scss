@@ -1,3 +1,156 @@
-// Place all the styles related to the admin/backend controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// colors
+.bg-sea { background-color:#1ABC9C; }
+.bg-carmine { background-color:#E84C3D; }  
+.bg-tarawera { background-color:#293949 }
+$offwhite: #f1f1f2;
+$offgreen: #1abc9c;
+$drakgrey: #22242a;
+
+// global actions
+.delete-confirm { margin-top:20px; display:none; }
+h3.text-danger { font-weight:bolder; }
+
+// global settings
+
+
+html, body { position:relative; }
+.row + .row { margin-top:25px; }
+ul { list-style:none; padding-left:0; }
+
+// header
+
+header {
+	width:100%;
+	background-color:#293949;
+	padding:10px 0;
+}
+
+header #toggle-nav i {
+	color:#fff;
+	font-size:18px;
+	margin-left:20px;
+
+}
+
+.brand { float:left; }
+
+.brand h3 { font-weight:bold; color:#fff; margin: 0 0 0 20px; line-height:normal; display:inline-block; }
+
+header .btn { 
+	background-color:#1abc9c; 
+	color:#fff; margin-right:10px; 
+	font-weight:600; 
+	border:1px solid transparent; 
+}
+
+#website { // view website link
+	background-color:transparent;
+	border-color: #f1f1f2;
+		&:hover {
+			background-color:#1abc9c;
+			color:#fff;
+			border-color:#1abc9c;
+		}
+}
+
+#logout:hover { background-color:transparent; border-color:#f1f1f2; color:#fff; }
+
+// aside
+
+header + aside {
+	width:200px;
+	height:100%;
+	position:absolute;
+	top:54px;
+	left:0;
+	background-color:#22242a;
+	border-top:1px solid #f1f1f2;
+	transition:all .15s ease-in-out;
+	z-index:500;
+}
+
+aside .current-admin { margin-top:20px;
+	img { border-radius:50%; }
+	h4 { text-align:center; font-weight:bold; color:#fff; margin-bottom:0; }
+	span { display:block; font-size:14px; text-align:center; color:#f1f1f2; }
+}
+
+nav { margin-top:40px; }
+nav ul > li { padding:0 10px 10px 10px; }
+nav ul > li a { 
+	display:block;
+	border-radius:5px;
+	padding:10px; 
+	text-align:left; 
+	color: $offwhite; 
+	font-weight:700;
+	text-tranform:uppercase;
+		&:hover { text-decoration:none; background-color: $offgreen; color:#fff; }
+}
+nav i { margin-right:5px; }
+
+.has-nested {
+	
+		> ul.nested { display:none; }
+		> ul.nested a { text-align:center; }
+		.btn { background-color: $offgreen; margin-top:10px; display:block;  }
+}
+
+.nested { margin:20px 0; }
+
+aside.slide { left:-200px; }
+
+// main content wrapper
+
+.main-wrapper {
+	height:100%;
+	margin-top:50px;
+	margin-left:200px;
+	padding-left:25px;
+	padding-right:25px;
+	padding-bottom:65px;
+	transition:margin .15s ease-in-out;
+}
+
+.main-wrapper.slide {
+	margin-left:0;
+}
+
+.main-content {
+	height:100%;
+	min-height:100%;	
+}
+
+.date + .btn { margin-bottom:20px; }
+
+.nav-bg { width:200px; height:100%; position:fixed; top:54px; left:0; z-index:499; background-color:#22242a; transition: left .15s ease-in-out; }
+
+.nav-bg.slide { left:-200px; }
+
+#scroll {
+	width:50px;
+	height:70px;
+	background:rgba(255,255,255,0.3);
+	border:1px solid #ddd;
+	border-radius:5px;
+	position:fixed;
+	bottom:25px;
+	right:25px;
+	z-index:9998;
+	i {
+		width:50px;
+		font-size:32px;
+		text-align:center;
+		line-height:70px;
+		color:#888;
+	}
+}
+
+
+
+
+
+
+
+
+

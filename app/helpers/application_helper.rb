@@ -14,7 +14,7 @@ module ApplicationHelper
 	end
 
 	def avatar_url(admin, size)
-		default_url = "#{root_url}images/logo.png"
+		default_url = "#{root_url}/#{asset_path('logo.png')}"
 		gravitar_id = Digest::MD5.hexdigest(admin.email.downcase)
 		"http://gravatar.com/avatar/#{gravitar_id}.png?s=#{size}&d=#{CGI.escape(default_url)}"
 	end

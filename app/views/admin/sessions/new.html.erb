@@ -1,8 +1,9 @@
+
 <div class="login">
     <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
         <%= devise_error_messages! %>
 
-        <%= image_tag '/images/logo.png', width: '99', height: '99' %>
+        <%= image_tag 'logo.png', width: '99', height: '99' %>
 
         <%= f.input :email %>
         <%= f.input :password %>

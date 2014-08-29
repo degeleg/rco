@@ -23,6 +23,6 @@ Rails.application.routes.draw do
   get ':permalink', to: 'pages#show', as: :permalink
   
 
-  post '/cms/tinymce_assets' => 'cms/tinymce_assets#create'
+  post '/admin/tinymce_assets' => 'admin/tinymce_assets#create'
 
 end

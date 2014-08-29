@@ -1,0 +1,56 @@
+
+
+.login-error {
+	width:75%;
+	margin:15px auto;
+}
+
+.login-wrapper {
+	position:relative;
+	height:100%;
+}
+
+.login {
+	width: 50%;
+	max-width:400px;
+	height: 300px;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0
+}
+
+.login img { 
+	-webkit-transition-duration: 0.15s;
+	-moz-transition-duration: 0.15s;
+	-o-transition-duration: 0.15s;
+	transition-duration:0.15s;
+
+	-webkit-transition-property: -webkit-tranform;
+	-moz-transition-property: -moz-tranform;
+	-o-transition-property: -o-tranform;
+	transition-property: tranform;
+}
+
+.login img:hover {
+	-webkit-transform:rotate(360deg);
+	-moz-transform:rotate(360deg);
+	-o-transform:rotate(360deg);
+	transform:rotate(360deg);
+}
+
+.login h3 {
+	margin-bottom:25px;
+}
+
+@media screen and (max-width:569px) {
+
+	.login { width:90%; }
+
+}
+
+
+
+
+
+
+

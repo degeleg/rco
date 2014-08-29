@@ -16,14 +16,14 @@ h3.text-danger { font-weight:bolder; }
 
 
 html, body { 
-	position:relative; 
-	
   	color:#777; 
   	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif; 
   	line-height:1.5;
 }
 
-.cms { background-color: #F1F2F7;  } 
+.cms { background-color: #F1F2F7; position:relative; } 
+
+.cms-login { background-color:#F1F2F7; }
 
 body.mce-content-body { 
   background-color:#fff;

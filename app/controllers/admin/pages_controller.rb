@@ -29,7 +29,7 @@ class Admin::PagesController < Admin::BackendController
 
 			respond_to do |format|
 				if @page.save
-					format.html { redirect_to cms_root_path, notice: 'Page Created' }
+					format.html { redirect_to admin_root_path, notice: 'Page Created' }
 					format.json { render action: 'index', status: :created, location: @page }
 				else
 					format.html { render action: 'new' }
@@ -53,7 +53,7 @@ class Admin::PagesController < Admin::BackendController
 
 		respond_to do |format|
 			if @page.update(page_params)
-				format.html { redirect_to cms_root_path, notice: 'Page Updated' }
+				format.html { redirect_to admin_root_path, notice: 'Page Updated' }
 				format.json { head :no_content }
 			else
 				format.html { render action: 'edit' }
@@ -67,7 +67,7 @@ class Admin::PagesController < Admin::BackendController
 		@page.destroy
 
 		respond_to do |format|
-			format.html { redirect_to cms_root_path, notice: 'Page Removed' }
+			format.html { redirect_to admin_root_path, notice: 'Page Removed' }
 			format.json { head :no_content }
 		end
 	end	

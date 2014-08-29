@@ -1,0 +1,21 @@
+
+<% if @contact.errors.any? %>
+	<% @contact.errors.full_messages.each do |message| %>
+		$('.errors-contact').show().find('strong').after(' ' + "<%= message.html_safe %>" + '.');
+	<% end %>
+<% else %>
+	if ($('.errors-contact').is(':visible')) {
+		$('.errors-contact').hide();
+		$('.sent-contact').show().find('strong').html("Thank you! We will be in contract shortly.");
+		$('#new_contact').each(function() {
+			this.reset();
+		});
+	} else if ($('.errors-contact').is(':hidden')) {
+		$('.sent-contact').show().find('strong').html("Thank you! We will be in contract shortly.");
+		$('#new_contact').each(function() {
+			this.reset();
+		});
+	}
+<% end %>
+
+

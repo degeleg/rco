@@ -1,0 +1,94 @@
+
+toolbar:
+  - styleselect | bold italic | alignleft aligncenter alignright alignfull | numlist bullist | link  uploadimage | undo redo table | fullscreen code visualblocks
+plugins:
+  - table
+  - fullscreen
+  - code
+  - uploadimage
+  - visualblocks
+  - link
+uploadimage_form_url: '/admin/tinymce_assets'
+schema: 'html5'
+relative_urls: false
+autofocus: false
+height: 250
+formats: {
+	alignleft : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'text-left'},
+    aligncenter : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'text-center'},
+    alignright : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'text-right'},
+    alignfull : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'text-justify'},
+    bold : { inline : 'strong' },
+    italic : { inline : 'em' },
+    underline : {inline : 'u', exact : true},
+    strikethrough : {inline : 's'},
+    custom_format : {block : 'h1', attributes : {title : "Header"}, styles : {color : red}}
+}
+menubar: false
+
+
+style_formats: [
+        {title: 'Headers', items: [
+            {title: 'h1', block: 'h1'},
+            {title: 'h2', block: 'h2'},
+            {title: 'h3', block: 'h3'},
+            {title: 'h4', block: 'h4'},
+            {title: 'h5', block: 'h5'},
+            {title: 'h6', block: 'h6'}
+        ]},
+
+        {title: 'Blocks', items: [
+            {title: 'p', block: 'p'},
+            {title: 'div', block: 'div'},
+            {title: 'pre', block: 'pre'}
+        ]},
+
+        {title: 'Containers', items: [
+            {title: 'Section', block: 'section', wrapper: true, merge_siblings: false},
+            {title: 'Break', block: 'div', wrapper: true, classes: 'break'},
+            {title: 'Article', block: 'article', classes: 'row', wrapper: true, merge_siblings: false},
+            {title: 'Row', block: 'div', wrapper: true, classes: 'row', merge_siblings: false},
+            {title: 'Blockquote', block: 'blockquote', wrapper: true},
+            {title: 'Aside', block: 'aside', wrapper: true},
+            {title: 'Figure', block: 'figure', wrapper: true}
+            
+        ]},
+
+        {title: 'Floats', items: [
+        	{title: 'Medium', items: [
+        		{title: '12 Column', block: 'div', wrapper: true, classes: 'col-md-12', merge_siblings: false},
+        		{title: '11 Column', block: 'div', wrapper: true, classes: 'col-md-11', merge_siblings: false},
+        		{title: '10 Column', block: 'div', wrapper: true, classes: 'col-md-10', merge_siblings: false},
+        		{title: '9 Column', block: 'div', wrapper: true, classes: 'col-md-9', merge_siblings: false},
+        		{title: '8 Column', block: 'div', wrapper: true, classes: 'col-md-8', merge_siblings: false},
+        		{title: '7 Column', block: 'div', wrapper: true, classes: 'col-md-7', merge_siblings: false},
+        		{title: '6 Column', block: 'div', wrapper: true, classes: 'col-md-6', merge_siblings: false},
+        		{title: '5 Column', block: 'div', wrapper: true, classes: 'col-md-5', merge_siblings: false},
+        		{title: '4 Column', block: 'div', wrapper: true, classes: 'col-md-4', merge_siblings: false},
+        		{title: '3 Column', block: 'div', wrapper: true, classes: 'col-md-3', merge_siblings: false},
+        		{title: '2 Column', block: 'div', wrapper: true, classes: 'col-md-2', merge_siblings: false},
+        		{title: '1 Column', block: 'div', wrapper: true, classes: 'col-md-1', merge_siblings: false}
+        	]},
+        	{title: 'Small', items: [
+        		{title: '12 Column', block: 'div', wrapper: true, classes: 'col-sm-12', merge_siblings: false},
+        		{title: '11 Column', block: 'div', wrapper: true, classes: 'col-sm-11', merge_siblings: false},
+        		{title: '10 Column', block: 'div', wrapper: true, classes: 'col-sm-10', merge_siblings: false},
+        		{title: '9 Column', block: 'div', wrapper: true, classes: 'col-sm-9', merge_siblings: false},
+        		{title: '8 Column', block: 'div', wrapper: true, classes: 'col-sm-8', merge_siblings: false},
+        		{title: '7 Column', block: 'div', wrapper: true, classes: 'col-sm-7', merge_siblings: false},
+        		{title: '6 Column', block: 'div', wrapper: true, classes: 'col-sm-6', merge_siblings: false},
+        		{title: '5 Column', block: 'div', wrapper: true, classes: 'col-sm-5', merge_siblings: false},
+        		{title: '4 Column', block: 'div', wrapper: true, classes: 'col-sm-4', merge_siblings: false},
+        		{title: '3 Column', block: 'div', wrapper: true, classes: 'col-sm-3', merge_siblings: false},
+        		{title: '2 Column', block: 'div', wrapper: true, classes: 'col-sm-2', merge_siblings: false},
+        		{title: '1 Column', block: 'div', wrapper: true, classes: 'col-sm-1', merge_siblings: false}
+        	]}
+        ]},
+        {title: 'Classes', items: [
+        	{title: 'Block', selector: 'span,img,strong', classes: 'block'},
+            {title: 'Small Float', items: [
+                {title: 'col-sm-1', selector: 'div', classes: 'col-sm-1'}
+            ]}
+        ]}
+    ]
+end_container_on_empty_block: true

@@ -1,0 +1,186 @@
+<%= link_to 'Menu', '#', id: 'menu-link' %>
+
+<div class="wrapper" id="contact">
+	
+	<div class="background-header"></div>
+	
+	<header id="header">
+		<div class="row text-center">
+			<%= image_tag 'contact-icon.png', alt: 'Contact Us', width: '126', height: '126'  %>
+			<h1 class="page-heading">Contact <small>Ritter &amp; Company LLC</small></h1>
+		</div>
+	</header>
+
+	<div class="content">
+
+		<!-- navigation -->
+		<%= render 'layouts/frontend/navigation' %>
+		<!-- end  -->
+		
+		<!-- section -->
+		<section class="text-center">
+			<div class="row">
+				<h1 class="page-heading">Keep in touch with us</h1>
+				<h2>Send us a message here</h2>
+
+				<div class="errors-contact">
+					<div class="alert alert-warning" role="alert">
+					  <strong>Warning!</strong>
+					</div>
+				</div>
+				
+				<div class="sent-contact">
+					<div class="alert alert-success" role="alert">
+					  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					  <strong></strong>
+					</div>
+				</div>
+
+			<!-- end row -->
+			</div>
+
+			
+			<!-- contacts form  -->
+			<div class="row">
+				<%= render 'contacts/form' %>
+			</div>
+			<!-- end -->
+			
+			<div class="row">
+
+				<div class="col-md-6 col-sm-6 text-center">
+					
+					<address>
+						<h2><span>Roswell Office</span></h2>
+						400 E College Blvd<br />
+						PO Box 1836<br />
+						Roswell, New Mexico 88202-1836<br />
+						<i class="fa fa-phone"></i> (575) 6252-8500 <br />
+						<abbr title="Fax">Fax:</abbr>  (575) 622-8996 <br />
+					</address>
+				</div>
+				<div class="col-md-6 col-sm-6 text-center">
+
+					<address>
+						<h2><span>Artesia Office</span></h2>
+						118 Roselawn<br />
+						PO Box 1091<br />
+						Artesia, New Mexico 88211-1091<br />
+						<i class="fa fa-phone"></i> (575) 748-1231<br />
+						<abbr title="Fax">Fax:</abbr>  (575) 748-1232 <br />
+					</address>
+					
+				</div>
+			</div>
+		</section>
+		<!-- end -->
+
+		<section id="map-container" style='width: 100%;'>
+			<div style='width: 100%;'>
+			  <div id="sidebar_builder" style='width: 100%; height: 400px;'></div>
+			</div>
+			<div id='sidebar_container' class="row">
+				
+			</div>
+		</section>
+
+		<section class="break"></section>
+
+		<section class="newsletter text-center" id="newsletter">
+			<div class="section-icon"></div>
+			<div class="row">
+				<h1>Sign up for the R&amp;C Newsletter!</h1>
+				<h2>
+					Stay connected with Ritter &amp; Company LLC <br />
+					with updates and helpful information from us.
+				</h2>
+				<p class="text-uppercase">
+					( Simply provide a name &amp; e-mail address here, and you're signed up )
+					<%= image_tag 'down-arrow.png' %>
+				</p>
+				<%= simple_form_for :newsletter, url: newsletters_path, remote: true, html: { class: 'form-inline', id: 'newsletter_form' } do |f| %>
+					<div class="errors-newsletter">
+						<div class="alert alert-warning alert-dismissible" role="alert">
+						  <strong>Warning!</strong>
+						</div>
+					</div>
+					<div class="sent-newsletter">
+						<div class="alert alert-success" role="alert">
+						  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						  <strong></strong>
+						</div>
+					</div>
+					<%= f.input :name, label: false, wrapper_html: { class: 'form-group' }, placeholder: 'Name' %>
+					<%= f.input :email, label: false, wrapper_html: { class: 'form-group' }, placeholder: 'Email' %>
+					<div class="form-group">
+						<%= f.button :submit, '', class: 'custom-submit' %>
+					</div>
+				<% end %>
+			</div>
+		</section>
+
+
+		<section id="employees">
+			<div class="row text-center">
+				<h1>Staff Directory</h1>
+				<div class="staff partners">
+					<h3>Partners:</h3>
+					<ul>
+						<% @employees.partner.each do |partner| %>
+							<li> 
+								<p>
+									<%= partner.fullname %><span class="staff-title">, <%= partner.title if partner.title.present? %><span>,
+									<%= partner.assignment %>
+									<%= mail_to partner.email do %>
+										<%= partner.email %>
+									<% end %>
+								</p> 
+							</li>
+						<% end %>
+					</ul>
+				</div>
+
+				<div class="staff accountants">
+					<h3>Tax &amp; Accounting Staff:</h3>
+					<ul>
+						<% @employees.accountants.each do |accountant| %>
+							<li> 
+								<p>
+									<%= accountant.fullname %><span class="staff-title"> <%= accountant.title if accountant.title.present? %><span>
+									<%= mail_to accountant.email do %>
+										<%= accountant.email %>
+									<% end %>
+								</p> 
+							</li>
+						<% end %>
+					</ul>
+				</div>
+
+				<div class="staff administration">
+					<h3>Administration:</h3>
+					<ul>
+						<% @employees.administration.each do |admin| %>
+							<li> 
+								<p>
+									<%= admin.fullname %>
+									<span class="staff-title"> <%= admin.title if admin.title.present? %><span>
+									<%= mail_to admin.email do %>
+										<%= admin.email %>
+									<% end %>
+								</p> 
+							</li>
+						<% end %>
+					</ul>
+				</div>
+
+			</div>
+		</section>
+		
+		<!-- footer -->
+		<%= render 'footer' %>
+		<!-- end -->
+		
+	</div>
+
+</div>
+

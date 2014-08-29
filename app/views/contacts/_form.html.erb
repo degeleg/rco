@@ -1,0 +1,14 @@
+
+<%= simple_form_for :contact, url: contacts_path, remote: true, html: { id: 'new_contact', class: 'contact-form' } do |f| %>
+	<div class="form-icon"></div>
+	
+	<div class="row">
+		<%= f.input :name, label: false, placeholder: 'Name', wrapper_html: { class: 'col-md-4 col-sm-4' } %>
+		<%= f.input :email, label: false, placeholder: 'e-mail', wrapper_html: { class: 'col-md-4 col-sm-4' } %>
+		<%= f.input :subject,label: false, placeholder: 'Subject', wrapper_html: { class: 'col-md-4 col-sm-4' } %>
+	</div>
+	<div class="row">
+		<%= f.input :message, as: :text, label: false, placeholder: 'Message', wrapper_html: { class: 'col-md-12' } %>
+		<%= f.button :submit, '', class: 'custom-contact-submit', title: 'Send' %>
+	</div>
+<% end %>

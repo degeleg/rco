@@ -1,0 +1,79 @@
+<!-- footer -->
+<p class="text-center link-top">
+	<%= link_to '#header' do %>
+	<%= image_tag 'up-arrow.png', alt: 'Back to top', width: '29', height: '29' %>
+	<span>GO BACK TO TOP</span>
+	<%= image_tag 'up-arrow.png', alt: 'Back to top', width: '29', height: '29' %>
+	<% end %>
+</p>
+
+<footer>
+	<div class="row">
+		<div class="col-md-5 col-sm-5 text-center">
+			<%= image_tag 'footer-logo.png', alt: 'Ritter & Company Logo', width: '62', height: '62' %>
+			<h1 class="super">R&amp;C</h1>
+			<span>RITTER and COMPANY LLC</span>
+			<small>C&#8226;P&#8226;A</small>
+		</div>
+		<div class="col-md-7 col-sm-7">
+			<p class="text-uppercase">Find us in Roswell 
+				
+				<%= image_tag 'map-pin.png', alt: 'Map Icon', width: '13', height: '20', class: "footer-map-pin" %>
+				<span>400 E College, 88201</span>
+				<i class="fa fa-phone"></i>
+				<span>(575) 622-8500</span>
+			</p>
+
+			<p class="text-uppercase">Find us in Artesia 
+				<%= image_tag 'map-pin.png', alt: 'Map Icon', width: '13', height: '20', class: "footer-map-pin" %>
+				<span>118 Roselawn, 88210</span>
+				<i class="fa fa-phone"></i>
+				<span>(575) 748-1231</span>
+			</p>
+			<h3>
+				
+				<%= image_tag 'footer-newsletter.png', alt: 'Newsletter', width: '41', height: '52' %>
+				<span><a href="/contact#newsletter">Get the R&amp;C Newsletter!</a></span>
+			</h3>
+		</div>
+	</div>
+
+	<div class="row copyright">
+		<%= image_tag 'cpa.png', alt: 'CPA | Certified Public Accountants', width: '108', height: '57' %>
+		<p><strong>America Counts on CPAs</strong><sup>&#174;</sup></p>
+		<p><small>Copyright 2014 : Ritter &amp; Company, LLC : All Right Reserved </small></p>
+	</div>
+
+
+</footer>
+<!-- end footer -->
+<div class="mobile-wrap">
+	<%= link_to '#mobile-contact', id: 'show-mobile' do  %>	
+		<i class="fa fa-caret-up"></i>
+	<% end %>
+
+	<div class="mobile-contact text-center">
+		<h2>Get in touch!</h2>
+		<div class="row">
+			
+			<h4>Roswell Office</h4>
+			<a class="btn btn-primary btn-block" href="tel:575-622-8500">
+				<i class="fa fa-phone"></i>Call Office
+			</a>
+			<a class="btn btn-primary btn-block" href="mailto:roswell@rcocpa.com">
+				<i class="fa fa-send"></i>Email Office
+			</a>
+		</div>
+
+		<div class="row">
+			<h4>Artesia Office</h4>
+			<a class="btn btn-primary btn-block" href="tel:575-748-1231">
+				<i class="fa fa-phone"></i>Call Office
+			</a>
+			<a class="btn btn-primary btn-block" href="mailto:artesia@rcocpa.com">
+				<i class="fa fa-send"></i>Email Office
+			</a>
+		</div>
+	</div>
+
+</div>

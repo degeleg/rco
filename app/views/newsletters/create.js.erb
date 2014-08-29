@@ -1,0 +1,23 @@
+
+<% if @newsletter.errors.any? %>
+	<% @newsletter.errors.full_messages.each do |message| %>
+		$('.errors-newsletter').show().find('strong').after(' ' + "<%= message.html_safe %>" + '.');
+	<% end %>
+<% else %>
+	if ($('.errors-newsletter').is(':visible')) {
+		$('.errors-newsletter').hide();
+		$('.sent-newsletter').show().find('strong').html("Thank you for signing up!");
+		$('#newsletter_form').each(function() {
+			this.reset();
+		});
+	} else if ($('.errors-newsletter').is(':hidden')) {
+		$('.sent-newsletter').show().find('strong').html("Thank you for signing up!");
+		$('#newsletter_form').each(function() {
+			this.reset();
+		});
+	}
+<% end %>
+
+
+
+

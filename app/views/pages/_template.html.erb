@@ -1,0 +1,51 @@
+
+
+
+
+<%= link_to 'Menu', '#', id: 'menu-link' %>
+
+<div class="wrapper" id="<%= @page.permalink %>">
+
+
+		<div class="background-header" style="background-image:url(<%= @page.background.url if @page.background_stored? %>);"></div>
+		<!-- header -->
+		<header id="header">
+		
+			<div class="row text-center">
+				<%= image_tag @page.icon.url, class: 'header-icon' if @page.icon_stored? %>
+				<% if @page.header_content.present? %>
+					<%= @page.header_content.html_safe %>
+				<% end %>
+			</div>
+	 
+		</header>
+		<!-- end header -->
+	
+		<div class="content">
+	<!-- navigation -->
+		<%= render 'layouts/frontend/navigation' %>
+	<!-- end navigation -->
+	
+
+		<% @page.sections.each do |section| %>
+			<!-- section wrapper -->
+			<% if section.background_stored? %>
+				<section class="break" style="background-image:url(<%= section.background.url %>);">
+				</section>
+			<% else %>
+			<div class="section-wrapper">
+				<% unless section.content.blank? %>
+					<%= raw(section.content) %>
+				<% end %> 
+			</div>
+			<% end %>
+			<!-- end section wrapper -->
+		<% end %>
+	
+
+	<!-- footer -->
+	<%= render 'footer' %>
+	<!-- end footer -->
+	</div>
+</div> 
+<!-- end wrapper -->

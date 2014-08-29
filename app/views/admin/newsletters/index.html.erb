@@ -1,0 +1,27 @@
+<h2>Newsletter Subscribers</h2>
+<div class="table-responsive">
+	<table class="table">
+		<thead>
+			<tr>
+				<td>Name:</td>
+				<td>Email:</td>
+				<td>Subscribed:</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% if @subscribers.empty? %>
+				<tr>
+					<td><h1>You do not have any recent subscribers</h1></td>
+				</tr>
+			<% end %>
+			<% @subscribers.each do |s| %>
+				<tr>
+					<td><%= s.name %></td>
+					<td><%= s.email %></td>
+					<td><%= l s.created_at, format: :short %></td>
+				</tr>
+			<% end %>
+		</tbody>
+
+	</table>
+</div>

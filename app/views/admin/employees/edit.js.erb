@@ -1,0 +1,8 @@
+$('#new-employee-link').hide().after('<%= escape_javascript(render "edit") %>')
+$('.cancel-form').on('click', function(e) {
+	e.preventDefault();
+	$('#employee-form').remove();
+	$('#new-employee-link').show();
+});
+
+

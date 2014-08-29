@@ -1,0 +1,12 @@
+$("ul.errors").html("")
+<% if @employee.errors.any? %>
+  <% @employee.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+  <% end %>
+<% else %>
+
+$('#employee-form').remove();
+$('#new-employee-link').show();
+$(".employee-index").html("<%= escape_javascript(render 'index') %>")
+
+<% end %>

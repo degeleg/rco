@@ -1,0 +1,19 @@
+<nav class="desktop">
+    <%= link_to '', root_path, id: 'home-link'  %>
+    
+    <ul class="clearfix">
+      <% @pages.publish.each do |page| %>
+
+        <% unless page.permalink === 'home' %>
+          <li class="col-md-3 col-sm-12" id=<%= "#{page.permalink}-link" %>>
+            <%= link_to permalink_path(page) do %>
+              <span><%= page.permalink %></span>
+              <div class="link-icon"></div>
+            <% end %>
+          </li>
+        <% end %>
+        
+      <% end %>
+      <li id="contact-link" class="col-md-3 col-sm-12"><a href="/contact">Contact</a></li>
+    </ul>
+</nav>

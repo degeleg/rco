@@ -1,0 +1,26 @@
+<%= simple_form_for ([:cms, @employee]), html: { id:'employee-form' }, remote: true do |f| %>
+	
+	<p class="text-muted">All fields required **</p>
+
+	<ul class="errors text-warning"></ul>
+	
+	<div class="row">
+
+		<%= f.input :first_name, wrapper_html: { class: 'col-md-6' } %>
+		<%= f.input :last_name, wrapper_html: { class: 'col-md-6' } %>
+		<%= f.input :email, wrapper_html: { class: 'col-md-6' } %>
+		<%= f.input :title, wrapper_html: { class: 'col-md-6' } %>
+
+		<div class="control-group col-md-12">
+			<%= f.label :assignment %>
+			<%= f.select :assignment, [['Partner'], ['Accounting'], ['Administration']], {:include_blank => 'Select One'}, class: 'form-control' %>
+		</div>
+		
+		<div class="col-md-12">
+			<%= f.button :submit, class: 'btn btn-primary' %>	
+			<button class="btn btn-danger cancel-form">Cancel</button>
+		</div>
+	
+	</div>
+
+<% end %>

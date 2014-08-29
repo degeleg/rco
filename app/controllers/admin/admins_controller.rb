@@ -16,7 +16,7 @@ class Admin::AdminsController < Admin::BackendController
 		@admin = Admin.create(admin_params)
 
 		if @admin.save
-			redirect_to cms_root_path
+			redirect_to admin_root_path
 		else
 			render action: 'new'
 		end
@@ -40,7 +40,7 @@ class Admin::AdminsController < Admin::BackendController
 
 		if @admin.update_attributes(admin_params)
 			sign_in(@admin, bypass: true) if @admin == current_admin
-			redirect_to cms_root_path, notice: 'Admin Updated Successfully'
+			redirect_to admin_root_path, notice: 'Admin Updated Successfully'
 		else
 			render action: 'edit'
 		end
@@ -49,7 +49,7 @@ class Admin::AdminsController < Admin::BackendController
 	def destroy
 		
 		@admin.destroy
-		redirect_to cms_root_path, notice: 'Admin Removed'
+		redirect_to admin_root_path, notice: 'Admin Removed'
 	end
 
 	private

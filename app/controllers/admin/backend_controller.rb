@@ -4,7 +4,7 @@ class Admin::BackendController < ApplicationController
 	end
 
 	layout 'backend'
-	#before_filter :authenticate_admin!
+	before_filter :authenticate_admin!
 
 	alias_method :current_user, :current_admin
 

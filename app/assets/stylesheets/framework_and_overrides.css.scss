@@ -22,7 +22,9 @@ a:active {
 fieldset { margin-top:25px; }
 
 // make all images responsive by default
-
+img {
+  margin: 0 auto;
+  }
 // override for the 'Home' navigation link
 .navbar-brand {
   font-size: inherit;

@@ -19,7 +19,9 @@
 	top: 0; left: 0; bottom: 0; right: 0
 }
 
-.login img { 
+.login img {
+	display: block;
+	margin:0 auto;
 	width:99px;
 	height:99px;
 	-webkit-transition-duration: 0.15s;

@@ -14,6 +14,8 @@ $(document).ready(function() {
 					'border-color' : linkColor
 				});
 
+			} else {
+				$(this).parent().removeClass('current-link');
 			}
 			
 		});

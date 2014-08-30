@@ -1,5 +1,11 @@
 // page global
 
+html, body { 
+    color:#777; 
+    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif; 
+    line-height:1.5;
+}
+
 .wrapper { background-color:#fff; }
 
 .main .row, .main section { margin-left:auto; margin-right:auto; }
@@ -42,9 +48,13 @@ div.background-header {
 
 .break { width:100%; height:200px; margin:70px 0 0 0; background-repeat:no-repeat; background-position:center center; background-size:cover; }
 
+section { margin-left:0; margin-right:0; padding-left:15px; padding-right:15px; }
+
 p + p { margin-top:30px; }
 
 nav ul { padding-left:0; }
+
+ul { list-style:none; }
 
 
 
@@ -217,9 +227,9 @@ section .row { margin-top:20px; margin-bottom:20px; margin-left:auto; margin-rig
 .link-top { margin-bottom:20px; margin-top:50px;
   a { color:#63a1a5; font-weight:700;
     &:hover { text-decoration:none; color:#63a1a5; }
-    &:hover img { padding:0 5px;  }
+    &:hover img { margin:0 0;  }
   }
-  img { display:inline; vertical-align:middle; margin:0 10px; transition: padding .25s ease-in-out; }
+  img { display:inline; vertical-align:middle; margin:0 10px; transition: margin .25s ease-in-out; }
   span { vertical-align:middle; word-spacing:7px; }
 }
 
@@ -508,6 +518,7 @@ form.row input { width:100%; height:30px; }
 .mobile-wrap { 
   display:none;
   width:100%;
+  height: 310px;
   position:fixed;
   bottom:-305px;
   left:0;

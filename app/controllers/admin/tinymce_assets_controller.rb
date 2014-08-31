@@ -6,7 +6,7 @@ class Admin::TinymceAssetsController < ApplicationController
 	    @image.save    
 	    render json: {
 	      image: {
-	        url: @image.image.url
+	        url: @image.image.remote_url
 	      }
 	    }, content_type: "text/html"
   	end

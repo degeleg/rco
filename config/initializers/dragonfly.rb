@@ -6,7 +6,7 @@ Dragonfly.app.configure do
 
   secret "e71d4a1fec8818f93a8db3aec3e73af21f384cbf5770acf7190abb591a28311d"
 
-  url_format "/media/:job/:name"
+  url_format "/media/:name"
 
     if Rails.env.development? || Rails.env.test?
 

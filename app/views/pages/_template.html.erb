@@ -7,7 +7,7 @@
 <div class="wrapper" id="<%= @page.permalink %>">
 
 
-		<div class="background-header" style="background-image:url(<%= @page.background.url if @page.background_stored? %>);"></div>
+		<div class="background-header" style="background-image:url(<%= @page.background.remote_url if @page.background_stored? %>);"></div>
 		<!-- header -->
 		<header id="header">
 		

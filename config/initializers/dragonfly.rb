@@ -1,4 +1,4 @@
-require 'dragonfly'
+require 'dragonfly/s3_data_store'
 
 # Configure
 Dragonfly.app.configure do
@@ -8,9 +8,20 @@ Dragonfly.app.configure do
 
   url_format "/media/:job/:name"
 
-  datastore :file,
-    root_path: Rails.root.join('public/system/dragonfly', Rails.env),
-    server_root: Rails.root.join('public')
+    if Rails.env.development? || Rails.env.test?
+
+	  datastore :file,
+	    root_path: Rails.root.join('public/system/dragonfly', Rails.env),
+	    server_root: Rails.root.join('public')
+
+    else
+  	  datastore :s3
+  		bucket_name: 'rcocpa',
+  		access_key_id: ENV['AWS3_KEY']
+  		secret_access_key: ENV['AWS3_SECRET']
+  		url_scheme: 'https'
+  	end
+
 end
 
 # Logger

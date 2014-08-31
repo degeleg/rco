@@ -1,5 +1,5 @@
 class Admin::PagesController < Admin::BackendController
-	#load_and_authorize_resource :find_by => :permalink
+	load_and_authorize_resource :find_by => :permalink
   	before_action :set_page, only: [:edit, :update, :destroy]
 
 	def index

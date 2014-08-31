@@ -42,12 +42,14 @@ gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'figaro'
+gem 'dragonfly-s3_data_store'
 
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
 gem 'rails_12factor', group: :production
+gem 'rack-cache', :require => 'rack/cache', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

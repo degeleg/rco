@@ -27,7 +27,7 @@
 	<!-- end navigation -->
 	
 
-		<% @page.sections.order('created_at').each do |section| %>
+		<% @page.sections.each do |section| %>
 			<!-- section wrapper -->
 			<% if section.background_stored? %>
 				<section class="break" style="background-image:url(<%= section.background.url %>);">

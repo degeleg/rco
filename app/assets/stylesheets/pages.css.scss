@@ -308,7 +308,9 @@ section.extend-break { margin-top:0; background-color:#63a1a5; padding: 40px 0 2
 
 #home #header h1 { font-size:104px; }
 
-#header h1 + small { color:#63a1a5; }
+#header h1 + p { margin-top:-10px; }
+
+#header h1 + p small { color:#63a1a5; }
 
 #home-newsletter { display:none; 
   h3 { color:#fff; text-transform:uppercase; font-weight:bolder; }
@@ -583,9 +585,9 @@ box-shadow:         0px -7px 14px 0px rgba(50, 50, 50, 0.3);
 
   // global
   
-  .main { font-size:14px; }
   .main h1 { font-size:36px; } 
   .main h2 { font-size:26px; }
+
 
   div.background-header { position:absolute; }
 
@@ -636,7 +638,8 @@ box-shadow:         0px -7px 14px 0px rgba(50, 50, 50, 0.3);
 
   #menu-link { display:block; }
 
-  #header h1 { font-size:42px; }
+  #header h1, #home #header h1 { font-size:42px; }
+
 
 
   section h1 + h2 { margin-top:10px; } 

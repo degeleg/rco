@@ -11,10 +11,6 @@ class Page < ActiveRecord::Base
 	dragonfly_accessor :background
 	dragonfly_accessor :icon
 
-	image_accessor :image do
-	    storage_path{ "page/#{self.permalink}/"}
-	  end
-
 	validates :permalink, presence: true
 	validates :permalink, uniqueness: true
 

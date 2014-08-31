@@ -19,6 +19,7 @@ Dragonfly.app.configure do
   		bucket_name: 'rcocpa',
   		access_key_id: ENV['AWS3_KEY'],
   		secret_access_key: ENV['AWS3_SECRET'],
+  		root_path: ('images/uid'),
   		url_scheme: 'https'
   	end
 

@@ -12,7 +12,7 @@
 		<header id="header">
 		
 			<div class="row text-center">
-				<%= image_tag @page.icon.url, class: 'header-icon' if @page.icon_stored? %>
+				<%= image_tag @page.icon.remote_url, class: 'header-icon' if @page.icon_stored? %>
 				<% if @page.header_content.present? %>
 					<%= @page.header_content.html_safe %>
 				<% end %>
@@ -30,7 +30,7 @@
 		<% @page.sections.each do |section| %>
 			<!-- section wrapper -->
 			<% if section.background_stored? %>
-				<section class="break" style="background-image:url(<%= section.background.url %>);">
+				<section class="break" style="background-image:url(<%= section.background.remote_url %>);">
 				</section>
 			<% else %>
 			<div class="section-wrapper">

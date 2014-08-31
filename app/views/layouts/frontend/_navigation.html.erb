@@ -2,7 +2,7 @@
     <%= link_to '', root_path, id: 'home-link'  %>
     
     <ul class="clearfix">
-      <% @pages.publish.each do |page| %>
+      <% @pages.publish.order('created_at').each do |page| %>
 
         <% unless page.permalink === 'home' %>
           <li class="col-md-3 col-sm-3 col-xs-12" id=<%= "#{page.permalink}-link" %>>

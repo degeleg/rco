@@ -12,7 +12,7 @@
             <i class="arrow fa fa-angle-down pull-right"></i>
         <% end %>
             <ul class="nested">
-                <% @pages.publish.each do |page| %>
+                <% @pages.publish.order('created_at').each do |page| %>
                     <li>
                         <%= link_to page.permalink.titleize, edit_admin_page_path(page)%>
                         <% end %>

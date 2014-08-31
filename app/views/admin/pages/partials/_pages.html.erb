@@ -9,7 +9,7 @@
 		</div>
 	</div>
 	<div class="panel-body">
-		<% @pages.publish.each do |page| %>
+		<% @pages.publish.order('created_at').each do |page| %>
 			<div class="page clearfix">
 				<h4><%= link_to page.permalink.titleize, edit_admin_page_path(page), 'data-no-turbolink' => true %> <small class="text-muted">(edit)</small> </h4>
 				<div class="page-actions">

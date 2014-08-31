@@ -17,10 +17,6 @@ class Page < ActiveRecord::Base
 	scope :draft, -> { where(published: false) }
 	scope :publish, -> { where(published: true) } 
 
-	image_accessor :background do
-      storage_path { "backgrounds/#{background_name}" } # !!!!! WARNING: Need to make sure this path is unique !!!!!
-    end
-
 	def prettify_permalink
 		self.permalink = self.permalink.parameterize
 	end

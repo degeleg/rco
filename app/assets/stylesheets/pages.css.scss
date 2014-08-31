@@ -1,10 +1,53 @@
 // page global
+@font-face {
+    font-family: 'Museo300Regular';
+    src: font-url('Museo300-Regular-webfont.eot');
+    src: font-url('Museo300-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('Museo300-Regular-webfont.woff') format('woff'),
+         font-url('Museo300-Regular-webfont.ttf') format('truetype'),
+         font-url('Museo300-Regular-webfont.svg#Museo300Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Museo700Regular';
+    src: font-url('Museo700-Regular-webfont.eot');
+    src: font-url('Museo700-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('Museo700-Regular-webfont.woff') format('woff'),
+         font-url('Museo700-Regular-webfont.ttf') format('truetype'),
+         font-url('Museo700-Regular-webfont.svg#Museo700Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Museo500Regular';
+    src: font-url('Museo500-Regular-webfont.eot');
+    src: font-url('Museo500-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('Museo500-Regular-webfont.woff') format('woff'),
+         font-url('Museo500-Regular-webfont.ttf') format('truetype'),
+         font-url('Museo500-Regular-webfont.svg#Museo500Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {font-family: 'MuseoSans-500';src: font-url('2BDD9F_0_0.eot');src: font-url('2BDD9F_0_0.eot?#iefix') format('embedded-opentype'),font-url('2BDD9F_0_0.woff') format('woff'),font-url('2BDD9F_0_0.ttf') format('truetype');}
+
+
 
 html, body { 
     color:#777; 
-    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif; 
+    font-family: 'Museo300Regular';
     line-height:1.5;
+    letter-spacing: 1px;
 }
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Museo500Regular' }
 
 .wrapper { background-color:#fff; }
 
@@ -12,7 +55,7 @@ html, body {
 
 .main h1 { font-size: 40px; }
 
-.main { background-color:#fff; font-size:18px; color:#7e7e7e; font-weight:400;}
+.main { background-color:#fff; font-size:18px; color:#7e7e7e; }
 
 div.background-header {
   height:500px; 
@@ -43,6 +86,8 @@ div.background-header {
 }
 
 #header h1 { font-size:72px; letter-spacing:3px; color:#fff; }
+
+#header h1 small {font-family:'MuseoSans-500';}
 
 #header h1 + small { color:#63a1a5; }
 
@@ -235,7 +280,7 @@ section .row { margin-top:20px; margin-bottom:20px; margin-left:auto; margin-rig
 
 // link to top
 
-.link-top { margin-bottom:20px; margin-top:50px;
+.link-top { margin-bottom:20px; margin-top:50px; font-family: 'MuseoSans-500';
   a { color:#63a1a5; font-weight:700;
     &:hover { text-decoration:none; color:#63a1a5; }
     &:hover img { margin:0 0;  }
@@ -272,13 +317,13 @@ footer a {
 	color:#fff;
 }
 
-footer .super { font-size:90px; }
+footer .super { font-size:104px; letter-spacing:9px; }
 
-.super + span { font-size:14px; font-style:italics; }
+.super + span { font-size:14px; font-family: 'MuseoSans-500'; }
 
 .super + span + small { display:block; font-size:12px; letter-spacing:4px; }
 
-.copyright { text-align:center; margin-top:125px; font-size:13px; }
+.copyright { text-align:center; margin-top:125px; font-size:13px; font-family: 'MuseoSans-500'; letter-spacing:normal}
 
 footer .copyright p { text-transform:capitalize; font-size:18px; color:#487376; margin-top:10px; 
   sup { font-size:11px; }
@@ -458,26 +503,27 @@ div.sent-newsletter, div.sent-contact { display:none; }
     &:hover { background-color:#22242a; }
 }
 
-address { font-size:18px;
-  h2 { margin-bottom:15px; } 
-  span { border-bottom: 3px solid #333;  }
+address { font-size:18px; font-family: 'Museo500Regular';
+  h2 { margin-bottom:15px; text-transform:uppercase;} 
+  span { border-bottom: 3px solid #7e7e7e;  }
 }
 
-.col-md-6:first-child address { border-right: 3px solid #333; }
+.col-md-6:first-child address { border-right: 3px solid #7e7e7e; }
 
 
 #map-container { margin-bottom:0; padding:0; position:relative; }
 
 #sidebar_container { height:50px; position:absolute; bottom:0px; margin-bottom:-70px; z-index:9998; 
-  a { margin-right:15px; font-weight:normal; cursor:pointer; color:#7e7e7e;
+  a { margin-right:15px; font-weight:normal; cursor:pointer; color:#7e7e7e; text-transform: uppercase; font-family: 'MuseoSans-500'; font-size:20px;
     &:before{ 
       content:''; 
       display:inline-block; 
       width:30px; 
       height:30px; 
       background:image_url('active-mapcon.png') no-repeat center center; 
-      margin-right:10px; 
+      margin-right:0px; 
       vertical-align:text-bottom;
+
     }
   }
   .current-map { color: #427c9d; }
@@ -498,15 +544,15 @@ address { font-size:18px;
 .directions.btn-default {margin-top:10px; display:block; background-color:#427c9d; color:#fff; border-color:transparent;}
 
 .newsletter { background-color:#427c9d; text-align: center; padding:75px 0 50px 0; margin-bottom:75px;
-  h1 { color:#FFF; font-weight:bolder; margin-top:45px; }
-  h2 { color:#FFF; margin-top:15px; }
+  h1 { color:#FFF; font-weight:bolder; margin-top:45px; font-family:'MuseoSans-500';}
+  h2 { color:#FFF; font-family: 'Museo300Regular'; text-transform:none; letter-spacing:1px; margin-top:15px; }
 }
 
 .newsletter form.row { max-width:680px; }
 
 .newsletter h1:before, .newsletter h1:after { display:none; }
 
-.newsletter h2 + p { text-transform: uppercase; color:#fff; font-weight:normal; }
+.newsletter h2 + p { text-transform: uppercase; color:#fff; font-weight:normal; font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;; font-size: 14px; font-weight:300; letter-spacing:1px; }
 
 .newsletter p img { display:block; margin:20px auto;  }
 
@@ -529,7 +575,7 @@ form.row input { width:100%; height:30px; }
   h1 { margin-bottom:55px; }
 }
 
-.staff {
+.staff { font-family: 'Museo500Regular';
   h3 { margin:15px 0 30px 0; text-transform:uppercase; font-weight:700; } 
   li { padding:5px 0; }
   strong { text-transform: uppercase; display:inline-block; margin-left:7px; } 

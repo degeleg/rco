@@ -132,7 +132,7 @@
 									<%= partner.fullname %><span class="staff-title">, <%= partner.title if partner.title.present? %><span>,
 									<%= partner.assignment %>
 									<%= mail_to partner.email do %>
-										<%= partner.email %>
+										<strong><%= partner.email %></strong>
 									<% end %>
 								</p> 
 							</li>
@@ -148,7 +148,7 @@
 								<p>
 									<%= accountant.fullname %><span class="staff-title"> <%= accountant.title if accountant.title.present? %><span>
 									<%= mail_to accountant.email do %>
-										<%= accountant.email %>
+										<strong><%= accountant.email %></strong>
 									<% end %>
 								</p> 
 							</li>
@@ -165,7 +165,7 @@
 									<%= admin.fullname %>
 									<span class="staff-title"> <%= admin.title if admin.title.present? %><span>
 									<%= mail_to admin.email do %>
-										<%= admin.email %>
+										<strong><%= admin.email %></strong>
 									<% end %>
 								</p> 
 							</li>

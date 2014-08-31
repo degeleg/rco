@@ -15,7 +15,7 @@ Dragonfly.app.configure do
 	    server_root: Rails.root.join('public')
 
     else
-  	  datastore :s3
+  	  datastore :s3,
   		bucket_name: 'rcocpa',
   		access_key_id: ENV['AWS3_KEY'],
   		secret_access_key: ENV['AWS3_SECRET'],

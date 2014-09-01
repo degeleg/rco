@@ -85,6 +85,12 @@ style_formats: [
         	]}
         ]},
         {title: 'Classes', items: [
+            {title: 'Font selector', items: [
+                {title: 'Standard', selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,section,article,a,span', classes: 'font300'},
+                {title: 'Font 500', selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,section,article,a,span', classes: 'font500'},
+                {title: 'Font 500 Sans', selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,section,article,a,span', classes: 'font500sans'},
+                {title: 'Font 700', selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,section,article,a,span', classes: 'font700'}
+            ]},
         	{title: 'Block', selector: 'span,img,strong', classes: 'block'},
             {title: 'Small Float', items: [
                 {title: 'col-sm-1', selector: 'div', classes: 'col-sm-1'}

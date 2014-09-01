@@ -146,7 +146,7 @@
 						<% @employees.accountants.each do |accountant| %>
 							<li> 
 								<p>
-									<%= accountant.fullname %><span class="staff-title"> <%= accountant.title if accountant.title.present? %><span>
+									<%= accountant.fullname %><span class="staff-title"> <%=  accountant.title if accountant.title.present? %><span>
 									<%= mail_to accountant.email do %>
 										<strong><%= accountant.email %></strong>
 									<% end %>

@@ -29,6 +29,11 @@ $(document).ready(function() {
 			$('#home-newsletter').slideToggle();
 		});
 
+		$('.video-link').on('click', function(e) {
+			e.preventDefault();
+			$('.video-wrap').slideToggle();
+		});
+
 		$('.link-top a').click(function () {
 			$('body,html').animate({
 				scrollTop: 0

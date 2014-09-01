@@ -330,7 +330,7 @@ footer a {
 	color:#fff;
 }
 
-footer .super { font-size:104px; letter-spacing:9px; }
+footer .super { font-size:104px; letter-spacing:9px; font-family:'museo_slab500'; }
 
 .super + span { font-size:14px; font-family: 'MuseoSans-500'; }
 
@@ -407,9 +407,13 @@ section.extend-break { margin-top:0; background-color:#63a1a5; padding: 40px 0 2
   &:last-child:after { display:none; }
 }
 
+.video {
+  img:hover { cursor:pointer; }
+}
+
 .video-wrap { display:none; }
 
-video { width:100%; height:auto; padding:10px;  }
+video { width:100%; height:auto; border:13px solid #ae3d58; border-radius:10px; margin-top:-25px;  }
 
 
 
@@ -436,9 +440,9 @@ section.text-center .row p img { margin-top:50px; margin-bottom:30px;}
 
 #careers h1 + p img { padding-right:10px; }
 
-#carrers strong a { color: #3f9671; }
+#careers p em a { color: #3f9671; }
 
-#carrers p +p.font700 { font-size:22px; }
+#carrers p + p.font700 { font-size:22px; }
 
 
 // contact page
@@ -664,7 +668,6 @@ box-shadow:         0px -7px 14px 0px rgba(50, 50, 50, 0.3);
   .main h1 { font-size:36px; } 
   .main h2 { font-size:26px; }
 
-
   div.background-header { position:absolute; }
 
   div.background-header, header#header { height:300px; }
@@ -773,12 +776,25 @@ box-shadow:         0px -7px 14px 0px rgba(50, 50, 50, 0.3);
 }
 
 @media screen and (max-width:569px) {
+
+  body { font-size:16px; }
+  br { display:none; }
+
+  #home .extend-break h1 { font-size:28px; }
+
+  blockquote p.text-center { text-align:left; }
+
+  #services ol { padding-left:0; padding-right:0; }
+
+  #newsletter h2 { font-size:22px; }
+
   .break { background-position: 0 0; }
   .mobile-wrap { display:block; }
 
- .footer-map-pin { display:block; margin-left:auto; margin-right:auto; margin-top:-45px; margin-bottom:45px; }
- footer  p { margin-bottom:50px; }
- footer p span { font-size:16px; }
+  .footer-map-pin { display:block; margin-left:auto; margin-right:auto; margin-top:-45px; margin-bottom:45px; }
+  footer p.text-uppercase { display:none; }
+  footer  p { margin-bottom:50px; }
+  footer p span { font-size:16px; }
 
 
 

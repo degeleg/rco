@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
-//= require underscore
-//= require gmaps/google
+//= require bootstrap-sprockets
 //= require turbolinks
-//= require cms_frontend
+//= require tinymce
+//= require cms_backend

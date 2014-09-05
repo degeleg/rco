@@ -79,7 +79,7 @@ class Admin::PagesController < Admin::BackendController
 		end 
 
 		def page_params
-			params.require(:page).permit(:permalink, :header_content, :background, :icon,
+			params.require(:page).permit(:permalink, :drop_text, :header_content, :background, :icon,
 			sections_attributes: [:id, :section_title, :content, :background, :image, :_destroy], 
 			meta_attributes: [:id, :author, :descriptive_title, :keywords, :description])
 		end

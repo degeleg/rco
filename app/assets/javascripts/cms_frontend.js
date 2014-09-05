@@ -1,24 +1,46 @@
+$(document).on("page:fetch", function() {
+	$('.loader').show();
+});
+
+$(document).on("page:receive", function() {
+	$('.loader').hide();
+});
+
+
 
 $(document).ready(function() {
 
 
-		$('nav a').each(function() {
+		$('.nav-links a').each(function() {
 			if ($(this).attr('href') === window.location.pathname) {
-				$(this).parent().siblings('li').removeClass('current-link');
-				$(this).parent().addClass('current-link ' + $(this).attr('href').split("/").pop());
-				$(this).parent().prev().addClass('border');
+				var $this = $(this);
+				$this.parent().siblings('li').removeClass('current-link');
+				$this.parent().addClass('current-link');
+				$this.on('click', function(e) {
+					e.preventDefault();
+				});
 
 				var linkColor = $(this).parent().css('background-color');
 
-				$('nav').addClass('active').css( {
+				$('.content').css( {
 					'border-color' : linkColor
 				});
 
-			} else {
-				$(this).parent().removeClass('current-link');
-			}
+			} 
 			
 		});
+
+		
+
+		if (window.location.pathname === '/') {
+			$('.nav-links').hover(function () {
+				var $color = $(this).css('background-color');
+				
+				$('.content').css({
+					'border-color' : $color
+				});
+			});
+		}
 
 		$('#menu-link').on('click', function(e) {
 			e.preventDefault();

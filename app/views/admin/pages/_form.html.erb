@@ -14,10 +14,7 @@
 
 	<!-- page form permalink -->
 	<%= f.input :permalink, label: "Enter Page Title", wrapper_html: { class: 'page-title' }  %>
-	<p class="text-center text-muted">
-
-
-	</p>
+	<p class="text-center text-muted"></p>
 	<h4 class="text-center show-title-verify text-muted">You have to enter a title to continue..</h4>
 	
 	<div class="row meta-wrap">
@@ -29,6 +26,7 @@
 				<%= build.input :keywords, wrapper_html: { class: 'col-md-6' } %>
 				<%= build.input :description, as: :text, wrapper_html: { class: 'col-md-6' } %>
 			<% end %>
+			<%= f.input :drop_text, label: 'Navigation Drop Text' %>
 		</fieldset>
 		
 	</div>

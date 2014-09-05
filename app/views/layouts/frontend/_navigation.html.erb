@@ -1,19 +1,25 @@
 <nav class="desktop">
     <%= link_to '', root_path, id: 'home-link'  %>
-    
     <ul class="clearfix">
       <% @pages.publish.order('created_at').each do |page| %>
 
         <% unless page.permalink === 'home' %>
-          <li class="col-md-3 col-sm-3 col-xs-12" id=<%= "#{page.permalink}-link" %>>
+          <li class='nav-links <%= "#{page.permalink}" %> '>
             <%= link_to permalink_path(page) do %>
-              <span><%= page.permalink %></span>
-              <div class="link-icon"></div>
+              <div class="hover-img"></div>
+              <span class="active-state"><%= page.permalink %></span>
+              <span class="hover-txt"><%= raw(page.drop_text) %></span>
             <% end %>
           </li>
         <% end %>
         
       <% end %>
-      <li id="contact-link" class="col-md-3 col-sm-3 col-xs-12"><a href="/contact">Contact</a></li>
+      <li class="nav-links contact">
+        <a href="/contact">
+          <div class="hover-img"></div>
+          <span class="active-state">Contact</span>
+          <span class="hover-txt">Call, Mail &amp; <br> Get Directions</span>
+        </a>
+      </li>
     </ul>
 </nav>

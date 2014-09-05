@@ -260,7 +260,7 @@ nav ul li a {
 
 
 // hover state
-li:hover {
+nav li:hover {
   .active-state  { display:none; }
   .hover-img  { top:10px; }
   .hover-txt  { bottom:0; }

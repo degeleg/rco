@@ -16,14 +16,14 @@
 			<p class="text-uppercase">Find us in Roswell 
 				
 				<%= image_tag 'map-pin.png', alt: 'Map Icon', width: '13', height: '20', class: "footer-map-pin" %>
-				<span>400 E College, 88201</span>
+				<a href="https://maps.google.com?saddr=Current+Location&daddr=400+E+College+Blvd+Roswell+NM+88202" target="_blank" title="Get Directions"><span>400 E College, 88201</span></a>
 				<i class="fa fa-phone"></i>
 				<span>(575) 622-8500</span>
 			</p>
 
 			<p class="text-uppercase">Find us in Artesia 
 				<%= image_tag 'map-pin.png', alt: 'Map Icon', width: '13', height: '20', class: "footer-map-pin" %>
-				<span>118 Roselawn, 88210</span>
+				<a href="https://maps.google.com?saddr=Current+Location&daddr=118+Roselawn+Artesia+NM+88211" target="_blank" title="Get Directions"><span>118 Roselawn, 88210</span></a>
 				<i class="fa fa-phone"></i>
 				<span>(575) 748-1231</span>
 			</p>
@@ -36,10 +36,21 @@
 	</div>
 
 	<div class="row copyright">
-		<%= image_tag 'cpa.png', alt: 'CPA | Certified Public Accountants', width: '108', height: '57' %>
-		<p><strong>America Counts on CPAs</strong><sup>&#174;</sup></p>
+		<a href="http://www.aicpa.org" title="AICPA - American Institute of CPAs">
+			<%= image_tag 'cpa.png', alt: 'CPA | Certified Public Accountants', width: '108', height: '57' %>
+			<p><strong>America Counts on CPAs</strong><sup>&#174;</sup></p>
+		</a>
 		<p><small>Copyright 2014 : Ritter &amp; Company, LLC : All Right Reserved </small></p>
-		<p class="text-center text-muted text-underline"><small>Designed By: Certified Fresh Designs | Delevoped By: 7n8 Creative</small></p>
+		<p class="text-center text-muted text-underline">
+			<small>
+				<a href="http://www.artofloganpack.com">Design By: Logan &amp; Michelle Pack</a> | 
+				<a href="www.7n8creative.com">Delevoped By: 7n8 Creative</a>
+			</small>
+			<br>
+			<small>
+				<a href="http://jamphotography1221.wix.com/jamphotography">Staff &amp; Facility Shots by JAM Photography</a>
+			</small>
+		</p>
 	</div>
 
 
@@ -75,25 +86,17 @@
 			<a class='directions btn btn-default' href='https://maps.google.com?saddr=Current+Location&daddr=118+Roselawn+Artesia+NM+88211' target=_blank>Get Directions</a>
 		</div>
 	</div>
-
 </div>
+<!-- end mobile slide -->
 <div class="loader">
-<div id="loaders">
-<div id="circle_1" class="circle">
-</div>
-<div id="circle_2" class="circle">
-</div>
-<div id="circle_3" class="circle">
-</div>
-<div id="circle_4" class="circle">
-</div>
-<div id="circle_5" class="circle">
-</div>
-<div id="circle_6" class="circle">
-</div>
-<div id="circle_7" class="circle">
-</div>
-<div id="circle_8" class="circle">
-</div>
-</div> 
+	<div id="loaders">
+		<div id="circle_1" class="circle"></div>
+		<div id="circle_2" class="circle"></div>
+		<div id="circle_3" class="circle"></div>
+		<div id="circle_4" class="circle"></div>
+		<div id="circle_5" class="circle"></div>
+		<div id="circle_6" class="circle"></div>
+		<div id="circle_7" class="circle"></div>
+		<div id="circle_8" class="circle"></div>
+	</div> 
 </div>

@@ -14,7 +14,6 @@
 			<table class="table administrators">
 				<thead>
 					<tr>
-						<td>#</td>
 						<td>Full Name</td>
 						<td>Email</td>
 						<td>Role</td>
@@ -23,7 +22,6 @@
 				<tbody>
 					<% @admins.order('created_at ASC').each do |admin| %>
 						<tr>
-							<td><%= admin.id %></td>
 							<td><%= image_tag avatar_url(admin, 40), height: '40', width: '40' %>
 								<% if admin.has_role? :developer %>
 									<span><%= admin.fullname %></span>

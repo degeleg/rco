@@ -15,7 +15,9 @@ footer { padding:75px 0 5px 0; background-color:#63a1a5; bottom:-10px;
       right:0;
       margin-right: 30px;  }
   }
-  a { color:#fff; }
+  a { color:#fff; 
+    &:hover { color:#fff; }
+  }
 }
 
 footer p { color:#fff; text-transform:uppercase; font-size:14px;
@@ -29,10 +31,12 @@ footer h3 { color:#fff; text-transform:uppercase;
 
 .copyright { text-align:center; margin-top:75px; font-size:13px; font-family: 'MuseoSans-500'; letter-spacing:normal
   p + p { margin-top:0px; margin-top:0; }
+  > a:hover { text-decoration:none; }
 }
 
 footer .copyright p { text-transform:capitalize; font-size:18px; color:#487376; margin-top:10px; 
   sup { font-size:11px; }
+  a { color:#487376; }
 }
 
 .link-newsletter { background:none; border:none; box-shadow:none; font-size:inherit;}

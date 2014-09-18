@@ -111,14 +111,14 @@ div.background-header {
   height:500px; 
   width:100%;
   background-repeat:no-repeat;
-  background-position:50% 50%;
+  background-position:50% 33%;
   background-size:cover;
   background-color:#000;
   position:fixed;
   top:0;
   left:0;
   z-index: 0;
-  transition:height .15s ease-in-out;
+  transition:height .15s ease-in-out, background-position .25s ease-in-out;
 }
 
 #header { 
@@ -129,7 +129,7 @@ div.background-header {
   background-color:transparent;
   border-top:1px solid transparent;
   transition:height .15s ease-in-out;
-    img { margin-top:120px; width:auto; height:auto; transition:all .15s ease-in-out }
+    img { margin-top:150px; width:auto; height:auto; transition:all .15s ease-in-out }
     h1 { font-size:72px; letter-spacing:3px; color:#fff; font-weight:bolder; text-transform:uppercase; font-family:'museo_slab500';
     small { font-size:19px; letter-spacing:2px; word-spacing:1px; color:#fff; display:block; font-family:'MuseoSans-500'; }
     h1 + small { color:#63a1a5; }
@@ -401,6 +401,7 @@ h3 + ol { margin-top:20px; }
 section.text-center .row p img { margin-top:50px; margin-bottom:30px;}
 
 // careers
+#careers .background-header { background-position:100% 100%; }
 
 #careers h1 + p img { padding-right:10px; }
 
@@ -410,7 +411,7 @@ section.text-center .row p img { margin-top:50px; margin-bottom:30px;}
 
 // contact page
 
-#contact .background-header { background-image:image_url('contact-bg.jpg'); }
+#contact .background-header { background-image:image_url('Contact.jpg'); background-position:50% 49%; }
 
 .contact-section { padding-left:0; padding-right:0; }
 
@@ -589,6 +590,9 @@ form.row input { width:100%; height:30px; }
 
 }
 
+@media screen and (min-width:1290px) {
+  #contact .background-header { background-image:image_url('Contact.jpg'); background-position:50% 23%; }
+}
 
 @media screen and (max-width:900px) {
 

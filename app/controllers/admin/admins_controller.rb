@@ -2,17 +2,13 @@ class Admin::AdminsController < Admin::BackendController
 
 	load_and_authorize_resource
 	def index 
-		@admins = Admin.all
-		@pages = Page.all
 	end
 
 	def new
 		
-		@pages = Page.all
 	end
 
 	def create
-		@pages = Page.all
 		@admin = Admin.create(admin_params)
 
 		if @admin.save
@@ -23,9 +19,6 @@ class Admin::AdminsController < Admin::BackendController
 	end
 
 	def edit 
-		
-		@admins = Admin.all
-		@pages = Page.all
 	end
 
 	def update

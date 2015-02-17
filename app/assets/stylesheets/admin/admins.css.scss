@@ -1,3 +1,15 @@
 // Place all the styles related to the admin/admins controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin-content {
+	margin-top: 75px;
+}
+
+.avatar {
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	display: block;
+	margin: 0 auto;
+}

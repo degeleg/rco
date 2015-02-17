@@ -43,7 +43,7 @@ class Admin::SupportsController < Admin::BackendController
 		@support.destroy
 
 		respond_to do |format|
-			format.html { redirect_to cms_root_path, notice: 'Ticket Removed' }
+			format.html { redirect_to admin_root_path, notice: 'Ticket Removed' }
 			format.json { head :no_content }
 		end
 	end

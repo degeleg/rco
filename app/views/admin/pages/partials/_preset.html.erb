@@ -3,69 +3,43 @@
 	<fieldset class="col-md-12 header-uploaders">
 		<legend>Page Header</legend>
 		
-		<div class="row">
-			<div class="col-md-4 parent">
-				<div class="content">
-					<h1 class="step">1</h1>
-					<h4 class="text-center">Select Header Background</h4>
-					<span class="btn btn-primary btn-block btn-file">
-						Browse... <%= f.input_field :background, as: :file %>
-					</span>
-					<% if @page.background_stored? %>
-						<span class="show-file label label-info"><%= @page.background.name %></span>
-					<% else %>
-						<span class="show-file label label-info"></span>
-					<% end %>
-				</div>
-			</div>
-
-			<div class="col-md-4 parent">
-				<div class="content">
-					<h1 class="step">2</h1>
-					<h4 class="text-center">Include Header Icon</h4>
-					<span class="btn btn-primary btn-block btn-file">
-						Browse... <%= f.input_field :icon, as: :file %>
-					</span>
-					<% if @page.icon_stored? %>
-						<span class="show-file label label-info"><%= @page.icon.name %></span>
-					<% else %>
-						<span class="show-file label label-info"></span>
-					<% end %>
-				</div>
-			</div>
-
-			<div class="col-md-4">
-				<div class="content">
-					<h1 class="step">3</h1>
-					<h4 class="text-center">Insert A headline</h4>
-					<button class="btn btn-primary btn-block add-content" id="show-headliners">
-						<% if @page.header_content.present? %>
-							Edit Content
-						<% else %>
-							Add Content
-						<% end %>
-					</button>
-				</div>
-			</div>
+		<div class="btns">
+			<button class="btn btn-primary header-btns" id="header-background-btn" >Select Header Background</button>
+			<button class="btn btn-primary header-btns" id="header-icon-btn" >Select Header Icon</button>
+			<button class="btn btn-primary header-content-btn">Add Content</button>
 		</div>
-		<div class="headliners clearfix">
-			<%= f.input :header_content, as: :text, input_html: { class: 'tinymce' } %>
+
+		<div class="form-header" style="background-image:url(<% if @page.background.present? %> <%= @page.background %><% else %>https://rcocpa.s3.amazonaws.com/images/uid/2014/09/18/02/15/39/699/home.jpg <% end %>)">
+			<div class="row text-center">
+				<img src="<% if @page.icon.present? %> <%= @page.icon %> <% else %>https://rcocpa.s3.amazonaws.com/images/uid/2014/09/06/05/27/20/836/home_logo.png <% end %>" alt="R&amp;C Logo" class="form-header-icon">
+				<%= f.input :header_content, label: false %>
+			</div>
 
 		</div>
+
+		<%= f.input_field :background, id: 'header-background', type: :hidden %>
+		<%= f.input_field :icon, id: 'header-icon', class: 'active', type: :hidden %>
+
+	
+
+
+		
 
 	</fieldset>
 
-	<fieldset class="col-md-12">
-		<legend>Main Content</legend>
-		
-		<% unless params[:action] == 'edit' %>
-			<%= link_to_new 'Add Section', f, :sections %>
-		<% else %>
-			<%= link_to_new 'Add Section', f, :sections %>
-			<%= f.simple_fields_for :sections do |build| %>
-				<%= render 'admin/pages/partials/section', f: build %>
+	<fieldset class="col-md-12 sections">
+		<div class="fieldset-header">
+			<legend>Main Content</legend>
+			
+			<% unless params[:action] == 'edit' %>
+				<%= link_to_new 'Add Section', f, :sections %>
+			<% else %>
+				<%= link_to_new 'Add Section', f, :sections %>
+				<%= f.simple_fields_for :sections do |build| %>
+					<%= render 'admin/pages/partials/section', f: build %>
+				<% end %>
 			<% end %>
-		<% end %>		
+		</div>		
 	</fieldset>
 
 </div>

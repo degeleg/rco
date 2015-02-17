@@ -1,14 +1,17 @@
 
 toolbar:
-  - styleselect | bold italic | alignleft aligncenter alignright alignfull | numlist bullist | link  uploadimage | undo redo table | fullscreen code visualblocks
+  - styleselect bold italic alignleft aligncenter alignright alignfull numlist bullist link image undo redo table code visualblocks
 plugins:
   - table
   - fullscreen
   - code
-  - uploadimage
+  - image
   - visualblocks
   - link
-uploadimage_form_url: '/admin/tinymce_assets'
+  - autoresize
+autoresize_min_height: '250px'
+image_advtab: true
+image_list: "/admin/media_assets.json"
 schema: 'html5'
 relative_urls: false
 autofocus: false

@@ -12,7 +12,7 @@
 	<tbody>
 		<% Employee.all.order('assignment').reverse.each do |employee| %>
 			<tr>
-				<td><%= link_to "#{employee.first_name } #{employee.last_name}", edit_admin_employee_path(employee), remote: true  %><small class="text-muted">(edit)</small></td>
+				<td class="txt-capitalize"><%= link_to "#{employee.first_name } #{employee.last_name}", edit_admin_employee_path(employee), remote: true  %> <small class="text-muted">(edit)</small></td>
 				<td><%= mail_to employee.email %></td>
 				<td><%= employee.assignment %></td>
 				<td><button class="btn btn-danger btn-block btn-delete">Delete</button>

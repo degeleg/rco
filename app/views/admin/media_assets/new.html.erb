@@ -1,0 +1,14 @@
+<%= render 'form' %>
+
+<hr>
+
+<ul class="row media-assets-list">
+	<% @image_assets.each do |asset| %>
+	<li class="col-md-4">
+		<%= image_tag asset.image_url(:thumb) if asset.image? %>
+			<ul>
+				<li> <%= link_to 'Delete Image', admin_media_asset_path(asset), method: :delete, class: 'btn btn-danger' %></li>
+			</ul>
+	</li>
+	<% end %>
+</ul>

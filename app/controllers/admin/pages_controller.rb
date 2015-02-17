@@ -3,21 +3,18 @@ class Admin::PagesController < Admin::BackendController
   	before_action :set_page, only: [:edit, :update, :destroy]
 
 	def index
-		@pages = Page.all
-		@admins = Admin.all
-		@tasks = Task.all
+		@supports = Support.all
 		@subscribers = Newsletter.all
 	end
 
 	def new
 		@page = Page.new
-		@pages = Page.all
+		@media_assets = MediaAsset.all
 		@page.sections.build
 		@page.build_meta
 	end
 
 	def create
-		@pages = Page.all
 		@page = Page.new(page_params)
 			if params[:publish]
 				@page.published = true
@@ -39,7 +36,7 @@ class Admin::PagesController < Admin::BackendController
 	end
 	
 	def edit
-		@pages = Page.all
+		@media_assets = MediaAsset.all
 	end	
 
 	def update
@@ -52,7 +49,7 @@ class Admin::PagesController < Admin::BackendController
 		end
 
 		respond_to do |format|
-			if @page.update(page_params)
+			if @page.update_attributes(page_params)
 				format.html { redirect_to admin_root_path, notice: 'Page Updated' }
 				format.json { head :no_content }
 			else
@@ -71,6 +68,13 @@ class Admin::PagesController < Admin::BackendController
 			format.json { head :no_content }
 		end
 	end	
+
+	def sort
+	  params[:sections].each_with_index do |id, index|
+	    Section.update_all({position: index+1}, {id: id})
+	  end
+	  render nothing: true
+	end
 
 	private
 

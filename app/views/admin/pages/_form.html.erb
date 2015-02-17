@@ -13,7 +13,7 @@
 	<% end %>
 
 	<!-- page form permalink -->
-	<%= f.input :permalink, label: "Enter Page Title", wrapper_html: { class: 'page-title' }  %>
+	<%= f.input :permalink, label: "Enter Page Title", wrapper_html: { class: 'page-title' }, input_html: {autocomplete: 'off'}  %>
 	<p class="text-center text-muted"></p>
 	<h4 class="text-center show-title-verify text-muted">You have to enter a title to continue..</h4>
 	
@@ -26,7 +26,7 @@
 				<%= build.input :keywords, wrapper_html: { class: 'col-md-6' } %>
 				<%= build.input :description, as: :text, wrapper_html: { class: 'col-md-6' } %>
 			<% end %>
-			<%= f.input :drop_text, label: 'Navigation Drop Text' %>
+			<%= f.input :drop_text, label: 'Navigation Drop Text', wrapper_html: { class: 'col-md-12' } %>
 		</fieldset>
 		
 	</div>
@@ -44,10 +44,19 @@
 
 	</div>
 
-
-
-	
-	
-
 <% end %>
+
+
+<div class="image-list">
+	<a href="#" class="close-modal btn btn-primary text-center">Close</a>
+	<ul class="row">
+		<% @media_assets.each do |asset| %>
+		<li class="col-md-3 col-sm-3">
+			<%= image_tag asset.image_url(:thumb) %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+
+<%= render 'admin/pages/partials/templates' %>
 

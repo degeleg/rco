@@ -20,7 +20,6 @@ $(document).ready(function() {
      	e.preventDefault();
     });
 
-
 	// insert new section on form
 
 	$('form').on('click', '.add_new', function(e) {
@@ -49,11 +48,10 @@ $(document).ready(function() {
      	$('.headliners').slideToggle();
     });
 
-	// render tinymce slidetoggle editor
 
 	$('form').on('click', '.add-content', function(e) {
 			e.preventDefault();
-			var $parent = $(this).parent();
+			var $parent = $(this).parent().next();
 			$parent.find('textarea').addClass('tinymce');
 			$parent.find('.editor').slideToggle();
 			$('.tinymce').each(function() {
@@ -61,6 +59,93 @@ $(document).ready(function() {
 				tinyMCE.execCommand('mceAddEditor', false, id);
 			});
 	});
+
+	// target header input fields
+	$('.header-btns').on('click', function (e) {
+		e.preventDefault();
+		var btnTarget = $(this).attr('id').replace('-btn', ''),
+			targetID = '#' + btnTarget;
+
+			$(targetID).addClass('active').siblings().removeClass('active');
+
+			$('.image-list')
+				.slideToggle()
+				.find('img')
+				.each(function () {
+					$(this).on('click', function () {
+						var imgURL = $(this).attr('src').replace('thumb_', '');
+						$('input.active').val(imgURL)
+										 .trigger('change');
+
+						$('.image-list').hide();
+					});
+				});
+	});
+
+	// add header content
+	$('form').on('click', '.header-content-btn', function (e) {
+		e.preventDefault();
+		$('.form-header textarea').slideToggle();
+	});
+
+	// section backgorund select
+	$('form').on('click', '.section-background-btn', function (e) {
+		e.preventDefault();
+		
+
+			var btnTarget = $(this).parents('.remove-container');
+
+			$(btnTarget).attr('id', 'active').siblings().removeAttr('id'); 
+
+			$('.image-list')
+				.slideToggle()
+				.find('img')
+				.each(function () {
+					$(this).on('click', function () {
+						var imgURL = $(this).attr('src').replace('thumb_', '');
+						$('#active').find('input.section-background').val(imgURL)
+										 .trigger('change');
+
+						$('#active').find('.img-placeholder').show().addClass('show').find('img').attr('src', imgURL)
+
+						$('.image-list').hide();
+					});
+				});
+	});
+
+	// close the image list
+	$('.close-modal').on('click', function (e) {
+		e.preventDefault();
+		$(this).parent().hide();
+	});
+
+	// listen to input change
+	$('#header-background').change(function () {
+		var imgURL = $(this).val().replace('thumb_', '');
+		$('.form-header').css('background-image', 'url(' + imgURL + ')');
+	});
+
+	$('#header-icon').change(function () {
+		var imgURL = $(this).val().replace('thumb_', '');
+		$('.form-header-icon').attr('src', imgURL);
+	});
+
+
+	// insert templates into editor
+
+
+	$('form').on('click', '.tmp-link', function (e) {
+	    e.preventDefault();
+	    alert('click');
+	    var findTemplate = $(this).attr('data');
+	    var getTemplate = '#' + findTemplate;
+	    var targetTemplate = $(getTemplate).html();
+	    tinyMCE.activeEditor.insertContent(targetTemplate);
+	});
+
+
+
+
 
 	// prevent form submit without title input
 
@@ -117,6 +202,15 @@ $(document).ready(function() {
 		}, 800);
 		return false;
 	});
+
+	// media asset info
+
+	$('.toggle-info').on('click', function (e) {
+		e.preventDefault();
+		$(this).parents('.row').find('.panel').slideToggle();
+	});
+
+	
 
 });
 

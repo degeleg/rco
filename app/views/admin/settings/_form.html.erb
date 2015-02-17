@@ -1,0 +1,26 @@
+<%= simple_form_for ([:admin, @setting]) do |f| %>
+	
+	<% if f.error_notification %>
+	    <div class="alert alert-danger" role="alert">
+	      <a class="close" data-dismiss="alert" href="#">&times;</a>
+	      <%= f.error_notification %>
+	    </div>
+	<% end %>
+
+	<fieldset class="first">
+		<legend>Location Information</legend>
+		<%= f.input :name, wrapper_html: { class: 'col-md-12' } %>
+		<%= f.input :street_address, wrapper_html: { class: 'col-md-6' } %>
+		<%= f.input :alternate_address, wrapper_html: { class: 'col-md-6' } %>
+		<%= f.input :city, wrapper_html: { class: 'col-md-4' } %>
+		<%= f.input :state, wrapper_html: { class: 'col-md-4' } %>
+		<%= f.input :zip, wrapper_html: { class: 'col-md-4' } %>
+		<%= f.input :phone, wrapper_html: { class: 'col-md-6' } %>
+		<%= f.input :fax, wrapper_html: { class: 'col-md-6' } %>
+	</fieldset>
+
+	<div class="col-md-12">
+		<%= f.button :submit, class: 'btn-primary' %>
+	</div>
+	
+<% end %>

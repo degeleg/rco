@@ -1,0 +1,40 @@
+<div class="row media-assets">
+	<h1>Upload Images <a href="#" class="toggle-info"><i class="fa fa-info-circle"></i></a></h1>
+
+		<div class="panel panel-default">
+			<div class="panel-heading parent">
+				<h3>Uploading Images</h3>
+			</div>
+
+			<div class="panel-body">
+				<p>
+					When uploading images it is important to <a href="http://en.wikipedia.org/wiki/Image_compression" target="_blank"><i>compress</i></a> the image first. The reason for this is uncompressed images take longer to load resulting in a poor end user experience. Below is a useful compression agent provided by <strong>Yahoo!</strong>
+			
+				</p>
+				<p>
+					<a href="http://www.smushit.com/ysmush.it/", target="_blank">Smush.it</a>
+				</p>
+				<p>
+					Simply follow the steps provided on <strong>Smush.it</strong>, save the compressed image(s) to your local machine and upload the newly compressed version of the image(s) to your site.
+				</p>
+			</div>
+			
+		</div>
+
+
+
+	<%= simple_form_for ([:admin, @media]), html: { multipart: true } do |f| %>
+		
+		<div class="row">
+
+			<%= f.file_field :image %>
+
+			<%= f.input :name, wrapper_html:{ class: 'col-md-6'} %>
+
+			<div class="col-md-12">
+				<%= f.button :submit, value: 'Upload Image', class: 'btn btn-primary' %>
+			</div>
+			
+		</div>
+	<% end %>
+</div>

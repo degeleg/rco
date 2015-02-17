@@ -1,12 +1,10 @@
 class Admin::EmployeesController < Admin::BackendController
 	def index
 		@employees = Employee.all
-		@pages = Page.all 
 	end
 
 	def new
 		@employee = Employee.new
-		@pages = Page.all
 	end
 
 	def create
@@ -42,7 +40,7 @@ class Admin::EmployeesController < Admin::BackendController
 	def destroy
 		@employee.destroy
 		respond_to do |format|
-	  		format.html { redirect_to admin_employees_path, notice: 'Employee Removed' }
+	  		format.html { redirect_to admin_root_path, notice: 'Location Removed' }
 	  		format.js
 	  	end
 	end

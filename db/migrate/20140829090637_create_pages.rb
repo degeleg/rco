@@ -6,12 +6,11 @@ class CreatePages < ActiveRecord::Migration
 
       t.integer :position
       t.boolean :published
+      t.string :drop_text
 
-      t.string :icon_uid
-      t.string :icon_name
+      t.string :icon
 
-      t.string :background_uid
-      t.string :background_name
+      t.string :background
 
       t.timestamps
     end

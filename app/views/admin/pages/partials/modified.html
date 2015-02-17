@@ -1,0 +1,16 @@
+	<!--this was taking from _preset.html.erb  -->
+
+	<fieldset class="col-md-12 sections">
+		<legend>Main Content</legend>
+		
+		<% unless params[:action] == 'edit' %>
+			<%= link_to_new 'Add Section', f, :sections %>
+		<% else %>
+			<%= link_to_new 'Add Section', f, :sections %>
+			<%= f.simple_fields_for :sections do |build| %>
+				<%= render 'admin/pages/partials/section', f: build %>
+			<% end %>
+		<% end %>		
+	</fieldset>
+
+	<!-- end form preset -->

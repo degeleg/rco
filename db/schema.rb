@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904052731) do
+ActiveRecord::Schema.define(version: 20150212165304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "admins", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+  create_table "admins", force: :cascade do |t|
+    t.string   "first_name",             limit: 255
+    t.string   "last_name",              limit: 255
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -36,61 +36,67 @@ ActiveRecord::Schema.define(version: 20140904052731) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
-  create_table "admins_roles", id: false, force: true do |t|
+  create_table "admins_roles", id: false, force: :cascade do |t|
     t.integer "admin_id"
     t.integer "role_id"
   end
 
   add_index "admins_roles", ["admin_id", "role_id"], name: "index_admins_roles_on_admin_id_and_role_id", using: :btree
 
-  create_table "employees", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "title"
-    t.string   "assignment"
+  create_table "employees", force: :cascade do |t|
+    t.string   "first_name", limit: 255
+    t.string   "last_name",  limit: 255
+    t.string   "email",      limit: 255
+    t.string   "title",      limit: 255
+    t.string   "assignment", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "meta", force: true do |t|
+  create_table "media_assets", force: :cascade do |t|
+    t.string   "image"
+    t.string   "name"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "meta", force: :cascade do |t|
     t.integer  "page_id"
-    t.string   "descriptive_title"
-    t.string   "author"
-    t.string   "keywords"
+    t.string   "descriptive_title", limit: 255
+    t.string   "author",            limit: 255
+    t.string   "keywords",          limit: 255
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "newsletters", force: true do |t|
-    t.string   "name"
-    t.string   "email"
+  create_table "newsletters", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "email",      limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "pages", force: true do |t|
+  create_table "pages", force: :cascade do |t|
     t.string   "permalink"
     t.text     "header_content"
     t.integer  "position"
     t.boolean  "published"
-    t.string   "icon_uid"
-    t.string   "icon_name"
-    t.string   "background_uid"
-    t.string   "background_name"
+    t.string   "drop_text"
+    t.string   "icon"
+    t.string   "background"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "drop_text"
   end
 
   add_index "pages", ["permalink"], name: "index_pages_on_permalink", using: :btree
   add_index "pages", ["position"], name: "index_pages_on_position", using: :btree
 
-  create_table "roles", force: true do |t|
-    t.string   "name"
+  create_table "roles", force: :cascade do |t|
+    t.string   "name",          limit: 255
     t.integer  "resource_id"
-    t.string   "resource_type"
+    t.string   "resource_type", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -98,28 +104,32 @@ ActiveRecord::Schema.define(version: 20140904052731) do
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
 
-  create_table "sections", force: true do |t|
+  create_table "sections", force: :cascade do |t|
     t.string   "section_title"
     t.integer  "page_id"
+    t.integer  "position"
     t.text     "content"
-    t.string   "image_uid"
-    t.string   "image_name"
-    t.string   "background_uid"
-    t.string   "background_name"
+    t.string   "background"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "supports", force: true do |t|
-    t.string   "ticket"
-    t.integer  "admin_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tasks", force: true do |t|
+  create_table "settings", force: :cascade do |t|
     t.string   "name"
-    t.string   "note"
+    t.string   "street_address"
+    t.string   "alternate_address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "fax"
+    t.string   "phone"
+    t.string   "map_location"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "supports", force: :cascade do |t|
+    t.string   "ticket",     limit: 255
     t.integer  "admin_id"
     t.datetime "created_at"
     t.datetime "updated_at"

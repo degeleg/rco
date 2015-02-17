@@ -21,19 +21,24 @@ html, body {
   	line-height:1.5;
 }
 
+h1, h2, h3, h4, h5, h6 { font-weight: 300; }
+
 .cms { background-color: #F1F2F7; position:relative; } 
 
 .cms-login { background-color:#F1F2F7; }
 
 body.mce-content-body { 
   background-color:#fff;
-  font-size:16px; color:#333; 
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif; 
-  font-weight:300;
+  font-size:16px;  
+  font-family: 'Museo300Regular'; 
   letter-spacing:1px;
   line-height:1.5;
   padding:10px;
+
+  	h1, h2, h3, h4, h5, h6 { font-family: 'Museo500Regular' }
 }
+
+
 
 .row + .row { margin-top:25px; }
 ul { list-style:none; padding-left:0; }

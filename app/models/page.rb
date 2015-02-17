@@ -8,9 +8,6 @@ class Page < ActiveRecord::Base
 	has_one :meta, dependent: :destroy
 	accepts_nested_attributes_for :sections, :meta, allow_destroy: true
 
-	dragonfly_accessor :background
-	dragonfly_accessor :icon
-
 	validates :permalink, presence: true
 	validates :permalink, uniqueness: true
 

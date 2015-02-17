@@ -1,0 +1,219 @@
+// contact page
+
+#contact .background-header { background-image:image_url('Contact.jpg'); background-position:50% 49%; }
+
+.contact-section { padding-left:0; padding-right:0; }
+
+section h1 + h2 { margin:-8px 0 20px 0; text-transform:uppercase; }
+
+.contact-form { 
+  height:auto; 
+  padding:25px 25px 0 25px; 
+  border:6px solid #427c9d; 
+  border-radius:25px; 
+  position:relative; 
+  margin: 0 auto 40px auto; 
+  max-width:680px; 
+  position:relative; 
+  margin-top:20px; 
+}
+
+.form-icon {
+  width:80px;
+  height:70px;
+  margin-top:-40px;
+  margin-left:-45px;
+  position:absolute;
+  top:0;
+  left:50%;
+  background:image_url('mail-icon.png') no-repeat center center #fff;
+
+}
+
+.contact-form input { 
+  background-color:#f2f1f1; 
+  border-radius:0; 
+  height:45px; 
+  border-color:transparent; 
+  box-shadow:none;
+}
+
+// vendor placeholder font size for form
+.contact-form ::-webkit-input-placeholder { font-size:20px; line-height:.75; }
+.contact-form :-moz-placeholder { font-size:20px; line-height:.75; } // FF 18-
+.contact-form ::-moz-placeholder { font-size:20px; line-height:.75; } // FF 19+
+.contact-form :-ms-input-placeholder { font-size:20px; line-height:.75; }
+// end placeholder vendor prefix
+
+.contact-form .row { margin-bottom:0; padding-left:0; padding-right:0; }
+
+.contact-form .row + .row { margin-bottom:30px; }
+
+.contact-form .control-group { margin-bottom:5px; }
+
+.contact-form textarea { background-color:#f2f1f1; border-radius:0; border-color:transparent; box-shadow:none; height:200px;}
+
+#new_contact input[type=submit] { 
+  width:70px; 
+  height: 70px; 
+  position:absolute; 
+  bottom:20px; 
+  right:20px;
+  border:5px solid #fff;
+  border-radius:50%; 
+  background: image_url('form-check.png') no-repeat center center #7e7e7e;
+    &:hover { background-color: #427c9d;}
+
+}
+
+div.errors-newsletter, div.errors-contact { display:none; }
+
+div.sent-newsletter, div.sent-contact { display:none; }
+
+.newsletter input { height:35px; }
+
+.newsletter_email { width:40%; 
+  input.email { width:100%; }
+}
+
+.newsletter input[type=submit],
+#home-newsletter input[type=submit] {
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  background:image_url('newsletter-check.png') no-repeat center center #fff;
+  margin-left:5px;
+    &:hover { background-color:#22242a; }
+}
+
+address { font-size:18px; font-family: 'Museo500Regular';
+  h2 { margin-bottom:15px; text-transform:uppercase;} 
+  span { border-bottom: 3px solid #7e7e7e;  }
+}
+
+.address { text-align:center; position:relative;
+  &:first-child:before { 
+    content:''; 
+    display:block; 
+    width:3px; 
+    height:90%; 
+    position:absolute; 
+    top:5%; 
+    right:0; 
+    background:#7e7e7e;
+    margin-right: -2px;
+  }
+}
+
+#map-container { margin-bottom:0; padding:0; position:relative; }
+
+#sidebar_container { height:50px; position:absolute; bottom:0px; margin-bottom:-70px; z-index:9995; 
+  a { margin-right:15px; font-weight:normal; cursor:pointer; color:#7e7e7e; text-transform: uppercase; font-family: 'MuseoSans-500'; font-size:20px;
+    &:before{ 
+      content:''; 
+      display:inline-block; 
+      width:30px; 
+      height:30px; 
+      background:image_url('active-mapcon.png') no-repeat center center; 
+      margin-right:0px; 
+      vertical-align:text-bottom;
+
+    }
+  }
+  .current-map { color: #427c9d; }
+}
+
+#sidebar_builder img { max-width: none !important; } // reset bootstrap image max-width for google map
+
+#map-container + .break { 
+  width:100%; 
+  height:200px; 
+  margin-top:0; 
+  margin-bottom:80px;
+  background-color:transparent;
+}
+
+.directions.btn-default {margin-top:10px; display:block; background-color:#427c9d; color:#fff; border-color:transparent;}
+
+.newsletter { background-color:#427c9d; text-align: center; padding:75px 0 50px 0; margin-bottom:75px; 
+  h1 { color:#FFF; font-weight:bolder; margin-top:45px; font-family:'MuseoSans-500';}
+  h2 { color:#FFF; font-family: 'Museo300Regular'; text-transform:none; letter-spacing:1px; margin-top:15px; }
+}
+
+.newsletter form.row { max-width:680px; }
+
+.newsletter h1:before, .newsletter h1:after { display:none; }
+
+.newsletter h2 + p { text-transform: uppercase; color:#fff; font-weight:normal; font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;; font-size: 14px; font-weight:300; letter-spacing:1px; }
+
+.newsletter p img { display:block; margin:20px auto;  }
+
+form.row input { width:100%; height:30px; }
+
+.section-icon { 
+  width:220px; 
+  height:220px;
+  border:12px solid #FFF; 
+  border-radius:50%; 
+  position:absolute; 
+  top:0; 
+  left:50%; 
+  margin-top:-150px; 
+  margin-left:-110px; 
+  background:image_url('newletter.png')no-repeat center center #427c9d; 
+}
+
+#employees { margin-bottom: 75px;
+  h1 { margin-bottom:55px; }
+}
+
+.staff { font-family: 'Museo500Regular';
+  h3 { margin:45px 0 45px 0; text-transform:uppercase; font-weight:700; letter-spacing:-1px;} 
+  li { padding:5px 0; }
+  strong { text-transform: uppercase; display:inline-block; margin-left:7px; } 
+  a { color:#427c9d; 
+    &:visited { color:#427c9d; }
+    &:hover { color:#428bca; }
+    &:active { color: #428bca }
+  }
+
+}
+
+
+@media screen and (max-width:768px) {
+// contact page
+  .contact-form,
+  .contact-form .control-group { padding-left:15px; padding-right:15px; margin-top:15px; }
+  .contact-form .row + .row { margin-top:0; }
+
+  .address { margin-bottom:40px;
+    &:first-child:before { display:none; }
+  }
+
+  .staff a { display:block; }
+
+  #newsletter_form .form-group { margin-bottom:15px; }
+
+  .newsletter_email { width:100%; }
+
+  div.newsletter_name { display:block; width:100%; }
+
+  input#newsletter_name{ display:block; width:100%;
+      input { width:100%; }
+   }
+
+  // footer
+
+  footer .col-md-7 { padding-left:0px; border-left:none; margin-top: 20px; padding-top: 20px; }
+
+  footer h3 img { display:block; margin:0 auto 15px; }
+
+    footer { text-align:center; }
+
+  footer h2 { 
+    img { display:block; }
+  }
+
+  footer .col-md-5:after { display:none; }
+
+}

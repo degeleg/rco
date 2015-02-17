@@ -7,14 +7,14 @@
 <div class="wrapper" id="<%= @page.permalink %>">
 
 
-		<div class="background-header" style="background-image:url(<%= @page.background.remote_url if @page.background_stored? %>);"></div>
+		<div class="background-header" style="background-image:url(<% if @page.background.present? %> <%= @page.background %><% else %>https://rcocpa.s3.amazonaws.com/images/uid/2014/09/18/02/15/39/699/home.jpg <% end %>)"></div>
 		<!-- header -->
 		<header id="header">
 		
 			<div class="row text-center">
-				<%= image_tag @page.icon.remote_url, class: 'header-icon' if @page.icon_stored? %>
+				<%= image_tag @page.icon, class: 'header-icon' if @page.icon.present? %>
 				<% if @page.header_content.present? %>
-					<%= @page.header_content.html_safe %>
+					<h1><%= @page.header_content.html_safe %></h1>
 				<% end %>
 			</div>
 	 
@@ -26,20 +26,21 @@
 		<%= render 'layouts/frontend/navigation' %>
 	<!-- end navigation -->
 	
-
-		<% @page.sections.each do |section| %>
-			<!-- section wrapper -->
-			<% if section.background_stored? %>
-				<section class="break" style="background-image:url(<%= section.background.remote_url %>);">
-				</section>
-			<% else %>
-			<div class="section-wrapper">
-				<% unless section.content.blank? %>
-					<%= raw(section.content) %>
-				<% end %> 
-			</div>
+		<% cache @page.sections do %>
+			<% @page.sections.each do |section| %>
+				<!-- section wrapper -->
+				<% if section.background.present? %>
+					<section class="break" style="background-image:url(<%= section.background %>);">
+					</section>
+				<% else %>
+				<div class="section-wrapper">
+					<% unless section.content.blank? %>
+						<%= raw(section.content) %>
+					<% end %> 
+				</div>
+				<% end %>
+				<!-- end section wrapper -->
 			<% end %>
-			<!-- end section wrapper -->
 		<% end %>
 	
 

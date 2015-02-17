@@ -31,7 +31,6 @@
 				
 				<div class="sent-contact">
 					<div class="alert alert-success" role="alert">
-					  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 					  <strong></strong>
 					</div>
 				</div>
@@ -48,29 +47,20 @@
 			
 			<div class="row">
 
-				<div class="col-md-6 col-sm-6 address">
-					
-					<address>
-						<h2><span>Roswell Office</span></h2>
-						400 E College Blvd<br />
-						PO Box 1836<br />
-						Roswell, New Mexico 88202-1836<br />
-						<i class="fa fa-phone"></i> (575) 6252-8500 <br />
-						<abbr title="Fax">Fax:</abbr>  (575) 622-8996 <br />
-					</address>
-				</div>
-				<div class="col-md-6 col-sm-6 address">
+				<% @settings.each do |location| %>
+					<div class="col-md-6 col-sm-6 address">
+						
+						<address>
+							<h2><span><%= location.name %></span></h2>
+							<%= location.street_address %><br />
+							<%= location.alternate_address if location.alternate_address.present? %><br />
+							<%= location.city %>, <%= location.state %> <%= location.zip %> <br />
+							<i class="fa fa-phone"></i> <%= location.phone %> <br />
+							<abbr title="Fax">Fax:</abbr>  <%= location.fax %> <br />
+						</address>
+					</div>
+				<% end %>
 
-					<address>
-						<h2><span>Artesia Office</span></h2>
-						118 Roselawn<br />
-						PO Box 1091<br />
-						Artesia, New Mexico 88211-1091<br />
-						<i class="fa fa-phone"></i> (575) 748-1231<br />
-						<abbr title="Fax">Fax:</abbr>  (575) 748-1232 <br />
-					</address>
-					
-				</div>
 			</div>
 		</section>
 		<!-- end -->
@@ -129,7 +119,7 @@
 						<% @employees.partner.each do |partner| %>
 							<li> 
 								<p>
-									<%= partner.fullname %><span class="staff-title">, <%= partner.title if partner.title.present? %><span>,
+									<%= partner.fullname%><span class="staff-title">, <%= partner.title if partner.title.present? %><span>,
 									<%= partner.assignment %>
 									<%= mail_to partner.email do %>
 										<strong><%= partner.email %></strong>

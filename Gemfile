@@ -2,11 +2,11 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.5'
+gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem "font-awesome-rails"
@@ -26,27 +26,28 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-group :development do
-  gem 'rails_layout', github: 'RailsApps/rails_layout'
-end
+
 
 gem 'simple_form'
 gem 'mail_form'
-gem 'dragonfly', "~>1.0.5"
 gem 'devise'
 gem 'rolify'
 gem 'cancancan', '~> 1.9'
 gem 'jquery-turbolinks'
 gem 'tinymce-rails'
-gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 gem 'gmaps4rails'
 gem 'underscore-rails'
-gem 'figaro'
-gem 'dragonfly-s3_data_store'
+
+gem 'rmagick', :require => 'RMagick'
+gem 'carrierwave'
+gem 'fog'
+
 
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+
+gem 'haml-rails', '~> 0.8', group: :development
 
 gem 'rails_12factor', group: :production
 gem 'rack-cache', :require => 'rack/cache', group: :production

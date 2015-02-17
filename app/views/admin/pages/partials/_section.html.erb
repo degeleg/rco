@@ -7,27 +7,52 @@
 		<div class="panel panel-default">
 			<div class="panel-heading parent">
 				<%= f.input :section_title, wrapper_html: { class: 'section_title' }, placeholder: 'Section Title' %>
-				<span class="btn btn-primary btn-file">
-					Select Background... <%= f.input_field :background, as: :file %>
-				</span>
-				<% if f.object.background_stored? %>
-					<span class="show-file label label-info">Current Background: <%= f.object.background.name %></span>
-				<% else %>
-					<span class="show-file label label-info"></span>
-				<% end %>
+			
+					<span class="btn btn-primary section-background-btn">
+						Select Background... 
+					</span>
+					<%= f.input_field :background, class: 'section-background', type: :hidden %>
+
 				<div class="panel-action">
 					<i class="fa fa-angle-down close-body"></i>
+				</div>
+				<button class="btn btn-info add-content">
+					<% if f.object.content.present? %>
+						Edit Content <i class="fa fa-pencil"></i>
+					<% else %>
+						Add Content 
+					<% end %>
+				</button>
+				<div class="dropdown">
+				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+				    Insert Template
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				    <li><a href="#" data="cm-block-1" class="tmp-link">Template 1</a></li>
+				    <li><a href="#" data="cm-block-2" class="tmp-link">Template 2</a></li>
+				    <li><a href="#" data="cm-block-3" class="tmp-link">Template 3</a></li>
+				    <li><a href="#" data="cm-block-4" class="tmp-link">Template 4</a></li>
+				    <li><a href="#" data="cm-block-5" class="tmp-link">Template 5</a></li>
+				    <li><a href="#" data="cm-block-6" class="tmp-link">Template 6</a></li>
+				    <li><a href="#" data="cm-block-7" class="tmp-link">Template 7</a></li>
+				    <li><a href="#" data="cm-block-8" class="tmp-link">Template 8</a></li>
+				    <li><a href="#" data="cm-block-9" class="tmp-link">Template 9</a></li>
+				    <li><a href="#" data="cm-block-10" class="tmp-link">Template 10</a></li>
+				  </ul>
 				</div>
 			</div>
 
 			<div class="panel-body">
-				<button class="btn btn-info add-content">
-					<% if f.object.content.present? %>
-						Edit Content
+				<div class="img-placeholder">
+					<% if f.object.background.present? %>
+						<h4>Current Section Backgorund:</h4>
+							<img src="<%= f.object.background.to_s %>" alt="">
 					<% else %>
-						Add Content
+						<img src="" alt="">
 					<% end %>
-				</button>
+				</div>
+				
 				<div class="editor">
 
 					<%= f.input :content, as: :text, input_html: { rows: '10' }, label: false %>

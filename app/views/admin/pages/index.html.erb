@@ -23,7 +23,7 @@
 		<div class="dash-summary bg-sea">
 			<div class="content">
 				<h1 class="text-left"><%= @admins.size %></h1>
-				<p>Administrator(s)</p>
+				<p>Administrators</p>
 			</div>
 		</div>
 	</div>
@@ -31,8 +31,8 @@
 	<div class="col-md-3 col-sm-6">
 		<div class="dash-summary bg-carmine">
 			<div class="content">
-				<h1 class="text-left"><%= @tasks.size %></h1>
-				<p>To Do Tasks</p>
+				<h1 class="text-left"><%= @supports.size %></h1>
+				<p>Support Tickets</p>
 			</div>
 		</div>
 	</div>
@@ -56,30 +56,8 @@
 </div>
 
 <div class="row">
-	<div class="col-md-6 col-sm-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h4>
-					To Do 
-					<%= link_to 'Add Task', new_admin_task_path, class: 'add-new-link btn btn-primary', remote: true, id:'new-task-link' %>
-						
-				</h4>
-				<div class="panel-action">
-					<i class="fa fa-angle-up close-body"></i>
-				</div>
-			</div>
-			<div class="panel-body">
-
-				<div class="edit-task-field">
-				
-				</div>
-				<div class="tasks">
-					<%= render :template => 'admin/tasks/index' %>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-6 col-sm-12">
+	
+	<div class="col-md-12 col-sm-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h4>

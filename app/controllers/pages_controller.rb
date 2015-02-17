@@ -14,6 +14,7 @@ class PagesController < ApplicationController
 
 	def contact
 	    @pages = Page.all
-	    @employees = Employee.all
+	    @employees = Employee.order('last_name ASC')
+	    @settings = Setting.all
 	end
 end

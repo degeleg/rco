@@ -5,15 +5,12 @@ class CreateSections < ActiveRecord::Migration
       t.string :section_title
 
       t.integer :page_id
+      t.integer :position
 
       t.text :content
+
+      t.string :background
       
-      t.string :image_uid
-      t.string :image_name
-
-      t.string :background_uid
-      t.string :background_name
-
       t.timestamps
     end
   end

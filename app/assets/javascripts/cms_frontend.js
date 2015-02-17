@@ -47,7 +47,7 @@ $(document).ready(function() {
 			$('nav').toggleClass('activate');
 		});
 
-		$('#home').on('click', '.extend-break h1', function() {
+		$('.extend-break h1').on('click', function() {
 			$('#home-newsletter').slideToggle();
 		});
 

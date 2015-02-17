@@ -1,4 +1,10 @@
 <% heading "Admin: #{@admin.first_name} #{@admin.last_name}" %>
+<div class="row admin-content">
+	<div class="col-md-6 col-md-offset-3 text-center">
+		<%= image_tag avatar_url(@admin, 80), width: '80', height: '80', class: 'avatar' %>
+	    <h4><%= @admin.email %></h4>
+	</div>
+</div>
 <% unless @admin.has_role? :developer %>
 	<button class="btn btn-danger btn-delete">Delete</button>
 		<div class="delete-confirm">
@@ -9,4 +15,10 @@
 		</div>
 
 <%= render 'form' %>
+
+<% else %>
+	<h2 class="text-center">
+		You cannot edit this admin
+		<br> 
+	</h2>
 <% end %>

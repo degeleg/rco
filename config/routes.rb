@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :pages, :admins, :employees, :tasks, :supports
+    resources :pages, :admins, :employees, :tasks, :supports, :media_assets, :settings
     concerns :subscribers
     root to: 'pages#index'
   end

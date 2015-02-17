@@ -20,7 +20,7 @@ Rails.application.configure do
   config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = false
+  config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -35,13 +35,14 @@ Rails.application.configure do
     
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
+    address:              'smtp.sendgrid.net',
     port:                 587,
     domain:               'localhost:3000',
-    user_name:            ENV["GMAIL_USERNAME"],
-    password:             ENV["GMAIL_SECRET"],
+    user_name:            ENV["SENDGRID_USERNAME"],
+    password:             ENV["SENDGRID_PASSWORD"],
     authentication:       'plain',
-    enable_starttls_auto: true  }
+    enable_starttls_auto: true  
+  }
 
   # `config.assets.precompile` has moved to config/initializers/assets.rb
 
